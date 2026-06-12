@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIAD TECH- Login</title>
+     <link rel="stylesheet" href="./style.login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+   
+</head>
+<body>
+    <main>
+         <div class="container">
+
+        <a href="../index.html" class="voltar"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+
+        <h3 id="titulo">Entrar</h3>
+
+        <div class="barras">
+            <i class="fa-solid fa-user"></i>
+            <input type="text" id="campo-usuario"   placeholder="Usuário">
+        </div>
+
+        <div class="barras">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="campo-senha" placeholder="Senha">
+        </div>
+
+        <label class="mostrar">
+            <input type="checkbox" id="toggle-senha"> Mostrar senha
+        </label>
+       <div> 
+        <p id="msg-erro" class="msg-erro"></p>
+       </div>
+        <a href="#" class="lembrar-link">Esqueci minha senha</a>
+
+        <button class="entrar" id="btn-entrar">Entrar   <i class="fa-solid fa-square-arrow-up-right"></i></button>
+         
+    </div> 
+    </main>
+    <script src="./script.login.js"> </script>
+</body>
+</html>
+
+

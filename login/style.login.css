@@ -1,0 +1,134 @@
+  :root {
+            --card-color:      #217836;
+            --fundo-color:     #20633A;
+            --voltar-color:    #D9D9D9;
+            --text-voltar:     #767676;
+            --text-branco:     #F6F8F7;
+            --barra-color:     #F0F0F0;
+            --button-color:    #ED106A;
+            --button-hover:    #c50d58;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--fundo-color);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: sans-serif;
+        }
+
+       
+        .container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;                  
+            width: 550px;
+            background-color: var(--card-color);
+            border-radius: 8px;
+            padding: 50px 30px 30px;  
+        }
+
+        /* ── VOLTAR ── */
+        .voltar {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            padding: 4px 16px;
+            background-color: var(--voltar-color);
+            color: var(--text-voltar);
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+    
+        #titulo {
+            color: var(--text-branco);
+            font-size: 28px;
+            margin-bottom: 4px;
+        }
+
+        
+        .barras {
+            position: relative;
+            width: 100%;
+        }
+
+        .barras i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #555;
+            pointer-events: none;
+            font-size: 14px;
+        }
+
+        .barras input {
+            width: 100%;
+            padding: 12px 12px 12px 42px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: var(--barra-color);
+            outline: none;
+        }
+
+        .msg-erro{
+            color: #ff4d4d;
+            font-size: 13px;
+            background-color: rgba(0,0,0,0.2);
+            padding: 8px 12px;
+            border-radius: 5px;
+            width: 100%;
+            text-align: center;
+            display: none; 
+        }
+        
+
+        
+        .mostrar {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            align-self: flex-start;    
+            font-size: 13px;
+            color: var(--text-branco);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        
+        .lembrar-link {
+            color: var(--text-branco);
+            font-size: 13px;
+            text-decoration: none;
+            align-self: flex-end;       
+            opacity: 0.85;
+        }
+        .lembrar-link:hover { opacity: 1; }
+
+        
+        .entrar {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--button-color);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 4px;
+            transition: background 0.2s;
+        }
+        .entrar:hover { background-color: var(--button-hover); }
