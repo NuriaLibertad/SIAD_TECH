@@ -20,7 +20,7 @@ btnEntrar.addEventListener('click', function() {
     }
 
     if (usuario === USUARIO_CORRETO && senha === SENHA_CORRETA) {
-        window.location.href = './dashboard.html';
+        window.location.href = '../index.html';
     } else {
         mostrarErro('Usuario ou senha incorretos.');
     }
