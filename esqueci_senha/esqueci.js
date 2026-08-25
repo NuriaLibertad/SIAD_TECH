@@ -1,4 +1,3 @@
-// Função para alternar a visibilidade da senha (mostrar/ocultar)
 function togglePasswordVisibility(inputId, icon) {
     const passwordInput = document.getElementById(inputId);
     
