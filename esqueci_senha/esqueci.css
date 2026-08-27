@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #5d8e7c; /* O fundo verde-oliva da imagem */
+    background-color: #20633A; /* O fundo verde-oliva da imagem */
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -23,7 +23,7 @@ body {
 
 /* --- O Card de Senha --- */
 .password-card {
-    background-color: #0d633c; /* Verde mais escuro do card */
+    background-color: #217F35; /* Verde mais escuro do card */
     border-radius: 12px;
     padding: 40px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra suave para profundidade */
@@ -49,6 +49,10 @@ body {
     align-items: center;
     gap: 8px; /* Espaço entre o ícone e o texto */
     margin-bottom: 20px;
+}
+
+.back-button a{
+    text-decoration: none;
 }
 
 h1 {
