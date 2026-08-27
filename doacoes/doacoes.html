@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,27 +21,36 @@
       box-sizing: border-box;
     }
 
-    body {
-      margin: 0;
-      background-color: var(--fundo);
-      color: var(--verde-escuro);
-      font-family: Arial, Helvetica, sans-serif;
-    }
+body{
+    background-color: var(--fundo);
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+     font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
 
-    header {
-      width: 100%;
-      background-color: var(--verde-claro);
-      padding: 9px 32px;
-    }
+   header{
+    background-color: var(--verde-claro);
+    width:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    padding: 9px 32px;
+    justify-content: space-between;
+    
 
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: relative;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 32px;
+    width: 100%;
+}
 
     .logo img {
       display: block;
@@ -63,8 +73,7 @@
       text-decoration: none;
     }
 
-    .opcoes a:hover,
-    .opcoes a.ativo {
+    .opcoes a:hover {
       color: var(--rosa);
     }
 
@@ -84,12 +93,14 @@
     }
 
     .painel {
+      
       min-height: calc(100vh - 95px);
       padding: 65px 0;
       background-color: white;
     }
 
     .painel-titulo {
+      margin-top: 60px;
       text-align: center;
       margin-bottom: 30px;
     }
@@ -256,19 +267,18 @@
 <body>
   <header>
     <nav>
-      <a href="./index.html" class="logo">
-        <img src="./images/logosemfundo.png" alt="Logo da SIAD Tech">
+      <a href="../index.html" class="logo">
+        <img src="../images/logosemfundo.png" alt="Logo da SIAD Tech">
       </a>
 
       <ul class="opcoes">
-        <li><a href="./index.html#doar">Doações</a></li>
-        <li><a href="./index.html#beneficios">ONGs</a></li>
-        <li><a href="./index.html">Transporte</a></li>
-        <li><a href="./doacoes-ongs.html" class="ativo">Doações &amp; ONGs</a></li>
-        <li><a href="./fale_conosco/falecocnosco.html">Fale Conosco</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../doacoes/doacoes.html" class="ativo">Doações+ONGs</a></li>
+        <li><a href="#">Transporte</a></li>
+        <li><a href="../fale_conosco/falecocnosco.html">Fale Conosco</a></li>
       </ul>
 
-      <a href="./login/login.html" class="button-header">Entrar</a>
+      <a href="../login/login.html" class="button-header">Entrar</a>
     </nav>
   </header>
 
@@ -427,4 +437,5 @@
     });
   </script>
 </body>
+
 </html>
