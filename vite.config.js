@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    open: true, // abre o navegador automaticamente
+    open: true,
   },
-  base: '/SIAD_TECH/', // nome do repositório no GitHub
+  
 })
