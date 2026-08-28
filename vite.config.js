@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+iimport { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
@@ -6,4 +6,5 @@ export default defineConfig({
   server: {
     open: true, // abre o navegador automaticamente
   },
+  base: '/SIAD_TECH/', // nome do repositório no GitHub
 })
