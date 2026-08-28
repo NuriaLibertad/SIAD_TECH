@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Days+One&family=Outfit:wght@100..900&family=Press+Start+2P&display=swap');
+
+.pagina-faleconosco {
+    --header-color: #E1EDE4;
+    --text-header: #20633A;
+    --card-color: #217F35;
+    --text-card: #F6F8F7;
+    --button-card: #ED106A;
+    --fundo-color: #F4F8F7;
+
+    background-color: var(--fundo-color);
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.pagina-faleconosco * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.pagina-faleconosco header {
+    background-color: var(--header-color);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    padding: 9px 32px;
+    justify-content: space-between;
+}
+
+.pagina-faleconosco nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 32px;
+    width: 100%;
+}
+
+.pagina-faleconosco header .logo img {
+    display: flex;
+    width: 70px;
+    height: auto;
+    align-items: center;
+    gap: 7px;
+    text-decoration: none;
+}
+
+.pagina-faleconosco nav .opcoes {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.pagina-faleconosco nav .opcoes li a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-header);
+    text-decoration: none;
+}
+
+.pagina-faleconosco nav .opcoes li a:hover {
+    color: var(--button-card);
+}
+
+.pagina-faleconosco nav .opcoes li a span {
+    color: var(--button-card);
+}
+
+.pagina-faleconosco nav .button-header {
+    background-color: var(--card-color);
+    font-size: 0.95rem;
+    color: var(--text-card);
+    border: none;
+    border-radius: 6px;
+    padding: 9px 20px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.pagina-faleconosco main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 56px;
+}
+
+.pagina-faleconosco .container-faleconosco {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    width: 100%;
+}
+
+.pagina-faleconosco .logo-main img {
+    width: 400px;
+    height: auto;
+}
+
+.pagina-faleconosco .card {
+    background: linear-gradient(135deg, #1c6b38 0%, #1a5e30 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    padding: 32px 28px;
+    width: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.pagina-faleconosco .card p {
+    font-size: 1.1rem;
+    font-weight: 200;
+    color: var(--text-card);
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+.pagina-faleconosco .card .barras {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pagina-faleconosco .card .barras input {
+    display: block;
+    width: 100%;
+    background-color: var(--text-card);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 30px;
+    font-size: 0.86rem;
+    color: var(--text-header);
+    outline: none;
+}
+
+.pagina-faleconosco textarea {
+    width: 100%;
+    border-radius: 5px;
+    padding: 12px 30px;
+    font-size: 0.86rem;
+    outline: none;
+    min-height: 180px;
+    resize: vertical;
+}
+
+.pagina-faleconosco .card .btn-contato {
+    width: 100%;
+    background-color: var(--button-card);
+    font-size: 0.95rem;
+    color: var(--text-card);
+    border: none;
+    border-radius: 6px;
+    padding: 11px 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    margin-top: 4px;
+    transition: background 0.3s;
+}
+
+.pagina-faleconosco .btn-contato:hover {
+    background: #c80d5a;
+}
+
+.pagina-faleconosco #erroNome,
+.pagina-faleconosco #erroEmail,
+.pagina-faleconosco #erroTelefone,
+.pagina-faleconosco #erroMensagem {
+    color: rgb(199, 3, 3);
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 5px;
+}
+
+.pagina-faleconosco footer {
+    padding: 18px;
+    text-align: center;
+    background-color: var(--fundo-color);
+}
+
+.pagina-faleconosco footer p {
+    margin: 0;
+    color: var(--text-header);
+}

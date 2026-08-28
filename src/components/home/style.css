@@ -1,0 +1,235 @@
+.pagina-home {
+    --fundo: #F6F8F7;
+    --verde-escuro: #20633A;
+    --verde: #217F35;
+    --rosa: #ED106A;
+    --verde-claro: #DDEFE5;
+
+    margin: 0;
+    background-color: var(--fundo);
+    color: var(--verde-escuro);
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+.pagina-home header {
+    background-color: var(--verde-claro);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    padding: 9px 32px;
+    justify-content: space-between;
+}
+
+.pagina-home nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 32px;
+    width: 100%;
+}
+
+.pagina-home header .logo img {
+    display: flex;
+    width: 70px;
+    height: auto;
+    align-items: center;
+    gap: 7px;
+    text-decoration: none;
+}
+
+.pagina-home nav .opcoes {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.pagina-home nav .opcoes li a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--verde);
+    text-decoration: none;
+}
+
+.pagina-home nav .opcoes li a:hover {
+    color: var(--rosa);
+}
+
+.pagina-home nav .button-header {
+    background-color: var(--rosa);
+    font-size: 0.95rem;
+    color: var(--fundo);
+    border: none;
+    border-radius: 6px;
+    padding: 9px 20px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.pagina-home .hero {
+    padding: 80px 0 50px;
+    background-color: white;
+}
+
+.pagina-home .hero h1 {
+    font-size: 42px;
+    line-height: 1.05;
+    font-weight: 800;
+    color: var(--verde-escuro);
+}
+
+.pagina-home .hero p,
+.pagina-home .informacoes p,
+.pagina-home .logistica p,
+.pagina-home .app p {
+    color: #557062;
+    line-height: 1.6;
+}
+
+.pagina-home .botao-rosa {
+    display: inline-block;
+    padding: 12px 26px;
+    background-color: var(--rosa);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.pagina-home .botao-rosa:hover {
+    color: white;
+    opacity: 0.9;
+}
+
+.pagina-home .img-computador {
+    width: 250%;
+    max-width: 720px;
+    height: auto;
+}
+
+.pagina-home .texto-centro {
+    padding: 45px 0;
+    text-align: center;
+}
+
+.pagina-home .texto-centro h2,
+.pagina-home .doacoes h2,
+.pagina-home .informacoes h2,
+.pagina-home .logistica h2,
+.pagina-home .app h2 {
+    font-weight: 800;
+    color: var(--verde-escuro);
+}
+
+.pagina-home .doacoes {
+    padding: 35px 0 55px;
+    text-align: center;
+}
+
+.pagina-home .card-doacao {
+    min-height: 120px;
+    padding: 20px;
+    background-color: var(--verde-claro);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.pagina-home .informacoes {
+    padding: 60px 0;
+}
+
+.pagina-home .lista-beneficios {
+    padding: 0;
+    list-style: none;
+}
+
+.pagina-home .lista-beneficios li {
+    margin-bottom: 10px;
+    padding: 10px 14px;
+    background-color: #eaf7ef;
+    border: 1px solid var(--verde);
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.pagina-home .lista-beneficios li::before,
+.pagina-home .lista-check li::before {
+    content: "✓ ";
+    color: var(--verde);
+    font-weight: bold;
+}
+
+.pagina-home .logistica {
+    padding: 40px 0 70px;
+}
+
+.pagina-home .caixa-logistica {
+    padding: 35px;
+    border: 1px solid var(--verde);
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.pagina-home .lista-check {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pagina-home .lista-check li {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.pagina-home .app {
+    padding: 70px 0 0;
+    background-color: var(--verde);
+    color: white;
+    overflow: hidden;
+}
+
+.pagina-home .app h2,
+.pagina-home .app p {
+    color: white;
+}
+
+.pagina-home footer {
+    padding: 18px;
+    text-align: center;
+    background-color: var(--fundo);
+}
+
+.pagina-home footer p {
+    margin: 0;
+    color: var(--verde-escuro);
+}
+
+@media (max-width: 768px) {
+    .pagina-home .logo-area {
+        margin-left: 10px;
+    }
+
+    .pagina-home .hero {
+        padding-top: 45px;
+        text-align: center;
+    }
+
+    .pagina-home .hero h1 {
+        font-size: 32px;
+    }
+
+    .pagina-home .img-computador {
+        margin-top: 35px;
+    }
+}

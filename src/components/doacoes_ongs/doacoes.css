@@ -1,0 +1,244 @@
+.pagina-doacoes {
+    --fundo: #F6F8F7;
+    --verde-escuro: #20633A;
+    --verde: #217F35;
+    --rosa: #ED106A;
+    --verde-claro: #DDEFE5;
+
+    background-color: var(--fundo);
+    color: var(--verde-escuro);
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+.pagina-doacoes * {
+    box-sizing: border-box;
+}
+
+.pagina-doacoes header {
+    width: 100%;
+    background-color: var(--verde-claro);
+    padding: 9px 32px;
+}
+
+.pagina-doacoes nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pagina-doacoes .logo img {
+    display: block;
+    width: 70px;
+    height: auto;
+}
+
+.pagina-doacoes .opcoes {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pagina-doacoes .opcoes a {
+    color: var(--verde);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.pagina-doacoes .opcoes a:hover,
+.pagina-doacoes .opcoes a.ativo {
+    color: var(--rosa);
+}
+
+.pagina-doacoes .button-header {
+    background-color: var(--rosa);
+    color: white;
+    padding: 9px 20px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.pagina-doacoes .button-header:hover {
+    color: white;
+    opacity: 0.9;
+}
+
+.pagina-doacoes .painel {
+    min-height: calc(100vh - 95px);
+    padding: 65px 0;
+    background-color: white;
+}
+
+.pagina-doacoes .painel-titulo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.pagina-doacoes .painel-titulo h1 {
+    margin: 0;
+    color: var(--verde-escuro);
+    font-size: 2.3rem;
+    font-weight: 800;
+}
+
+.pagina-doacoes .painel-titulo p {
+    margin: 6px 0 0;
+    color: #557062;
+}
+
+.pagina-doacoes .carrossel {
+    position: relative;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.pagina-doacoes .slide {
+    display: none;
+}
+
+.pagina-doacoes .slide.ativo {
+    display: block;
+}
+
+.pagina-doacoes .tabela-responsiva {
+    overflow-x: auto;
+    border: 2px solid var(--verde-claro);
+    border-radius: 8px;
+    background-color: var(--fundo);
+    padding: 15px 25px;
+}
+
+.pagina-doacoes .tabela-painel {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+    color: var(--verde-escuro);
+}
+
+.pagina-doacoes .tabela-painel th,
+.pagina-doacoes .tabela-painel td {
+    padding: 14px 10px;
+    text-align: left;
+    border-bottom: 1px solid #b9d8c3;
+}
+
+.pagina-doacoes .tabela-painel th {
+    color: var(--verde);
+    font-size: 0.95rem;
+}
+
+.pagina-doacoes .tabela-painel td {
+    font-size: 0.88rem;
+}
+
+.pagina-doacoes .tabela-painel tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.pagina-doacoes .status {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.pagina-doacoes .entregue {
+    background-color: #c8f3d4;
+    color: var(--verde);
+}
+
+.pagina-doacoes .transporte {
+    background-color: #ffd1e2;
+    color: var(--rosa);
+}
+
+.pagina-doacoes .aguardando {
+    background-color: #e6e6e6;
+    color: #666;
+}
+
+.pagina-doacoes .seta-proxima {
+    position: absolute;
+    right: -45px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--rosa);
+    color: white;
+    font-size: 22px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.pagina-doacoes .seta-proxima:hover {
+    opacity: 0.85;
+}
+
+.pagina-doacoes footer {
+    padding: 18px;
+    text-align: center;
+    background-color: var(--fundo);
+}
+
+.pagina-doacoes footer p {
+    margin: 0;
+    color: var(--verde-escuro);
+}
+
+@media (max-width: 900px) {
+    .pagina-doacoes header {
+        padding: 12px 20px;
+    }
+
+    .pagina-doacoes nav {
+        gap: 15px;
+    }
+
+    .pagina-doacoes .opcoes {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .pagina-doacoes .opcoes a {
+        font-size: 0.8rem;
+    }
+
+    .pagina-doacoes .seta-proxima {
+        right: 10px;
+    }
+
+    .pagina-doacoes .tabela-responsiva {
+        padding-right: 55px;
+    }
+}
+
+@media (max-width: 600px) {
+    .pagina-doacoes nav {
+        flex-direction: column;
+    }
+
+    .pagina-doacoes .painel {
+        padding: 45px 15px;
+    }
+
+    .pagina-doacoes .painel-titulo h1 {
+        font-size: 1.8rem;
+    }
+}
