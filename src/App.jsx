@@ -5,6 +5,8 @@ import EsqueciSenha from './components/esqueci_senha/esqueci'
 import DoacoesOngs from './components/doacoes_ongs/doacoes'
 import FaleConosco from './components/fale_conosco/faleconosco'
 
+
+
 function App() {
   // Controla qual "página" está sendo exibida no momento.
   const [pagina, setPagina] = useState('home')
