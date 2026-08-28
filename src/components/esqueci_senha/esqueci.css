@@ -1,10 +1,10 @@
 .pagina-esqueci {
-    background-color: #5d8e7c;
+    background-color: #20633A;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 5px solid #007bff;
+   
     font-family: Arial, sans-serif;
 }
 
