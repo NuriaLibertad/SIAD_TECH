@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
-import './Css/Doacoes.css'
-import logo from '../assets/logosemfundo.png'
-import { Link } from "react-router-dom";
+import { useState } from 'react'
+import logo from '../../assets/./images/logosemfundo.png'
+import './doacoes.css'
 
-
-const Doacoes = () => {
+function Doacoes({ aoVoltar, aoIrParaLogin, aoIrParaFaleConosco }) {
   const [mostrarOngs, setMostrarOngs] = useState(false)
 
   const alternarSlide = () => {
@@ -12,23 +10,60 @@ const Doacoes = () => {
   }
 
   return (
-    <>
-     <header>
+    <div className="pagina-doacoes">
+      <header>
         <nav>
-          <a href="./index.html" className="logo">
+          <a
+            href="#"
+            className="logo"
+            onClick={(e) => {
+              e.preventDefault()
+              aoVoltar()
+            }}
+          >
             <img src={logo} alt="logo da SIAD Tech" />
           </a>
 
           <ul className="opcoes">
-            <Link to="/">Home</Link>
-            <Link to="/doacoes">Doações + ONGs</Link>
-            <Link to="/transporte">Transporte</Link>
-            <Link to="/fale-conosco">Fale Conosco</Link>
+            <li>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault()
+                  aoVoltar()
+                }}
+              >
+                Home
+              </a>
+            </li>
+            <li><a href="#" className="ativo">Doações + ONGs</a></li>
+            <li><a href="#">Transporte</a></li>
+            <li>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault()
+                  aoIrParaFaleConosco()
+                }}
+              >
+                Fale Conosco
+              </a>
+            </li>
           </ul>
-          <a href="./login/login.html" className="button-header">Entrar</a>
-        </nav>
 
+          <a
+            href="#"
+            className="button-header"
+            onClick={(e) => {
+              e.preventDefault()
+              aoIrParaLogin()
+            }}
+          >
+            Entrar
+          </a>
+        </nav>
       </header>
+
       <main>
         <section className="painel">
           <div className="container">
@@ -170,8 +205,7 @@ const Doacoes = () => {
       <footer>
         <p>SIAD Tech - Tecnologia social contra o desperdício.</p>
       </footer>
-
-   </>
+    </div>
   )
 }
 

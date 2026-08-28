@@ -1,33 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Days+One&family=Outfit:wght@100..900&family=Press+Start+2P&display=swap');
 
-:root{
-    --header-color:#E1EDE4;
-    --text-header:#20633A;
-    --card-color:#217F35;
-    --text-card:#F6F8F7;
-    --button-card:#ED106A;
+.pagina-faleconosco {
+    --header-color: #E1EDE4;
+    --text-header: #20633A;
+    --card-color: #217F35;
+    --text-card: #F6F8F7;
+    --button-card: #ED106A;
     --fundo-color: #F4F8F7;
+
+    background-color: var(--fundo-color);
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
-*{
+.pagina-faleconosco * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    background-color: var(--fundo-color);
-    min-height: 100vh;
-    overflow: hidden;
-    position: relative;
-     font-family: "Outfit", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-}
-
-header{
+.pagina-faleconosco header {
     background-color: var(--header-color);
-    width:100%;
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -35,11 +33,9 @@ header{
     align-items: center;
     padding: 9px 32px;
     justify-content: space-between;
-    
-
 }
 
-nav {
+.pagina-faleconosco nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -47,52 +43,43 @@ nav {
     width: 100%;
 }
 
-
-
-header .logo img{
+.pagina-faleconosco header .logo img {
     display: flex;
     width: 70px;
     height: auto;
-   align-items: center;
-   gap: 7px;
-   text-decoration: none;
-}
- 
-nav .opcoes {
-   display: flex;
-   gap: 28px;
-    list-style: none;
-    position:absolute;
-    left: 50%;
-    transform: translate(-50%);
-    
+    align-items: center;
+    gap: 7px;
+    text-decoration: none;
 }
 
-nav .opcoes li a {
+.pagina-faleconosco nav .opcoes {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.pagina-faleconosco nav .opcoes li a {
     font-size: 0.95rem;
     font-weight: 500;
     color: var(--text-header);
     text-decoration: none;
 }
 
-nav .opcoes li a{
-  color: var(--text-header);
-  font-weight: 400;
-}
-
-nav .opcoes li a:hover{
+.pagina-faleconosco nav .opcoes li a:hover {
     color: var(--button-card);
 }
 
-nav .opcoes li a span{
+.pagina-faleconosco nav .opcoes li a span {
     color: var(--button-card);
 }
 
-
-nav .button-header {
+.pagina-faleconosco nav .button-header {
     background-color: var(--card-color);
     font-size: 0.95rem;
-    color:var(--text-card);
+    color: var(--text-card);
     border: none;
     border-radius: 6px;
     padding: 9px 20px;
@@ -100,33 +87,29 @@ nav .button-header {
     cursor: pointer;
     text-decoration: none;
 }
-  
 
-   
-
-main{
-    height: 100vh;
+.pagina-faleconosco main {
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding-top: 56px;
 }
 
-.container{
+.pagina-faleconosco .container-faleconosco {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 60px;
-
-
+    width: 100%;
 }
 
-.logo-main img{
+.pagina-faleconosco .logo-main img {
     width: 400px;
-   height: auto;
-
+    height: auto;
 }
 
-.card{
+.pagina-faleconosco .card {
     background: linear-gradient(135deg, #1c6b38 0%, #1a5e30 100%);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
@@ -137,10 +120,9 @@ main{
     flex-direction: column;
     gap: 10px;
     margin-top: 30px;
- 
 }
 
-.card p{
+.pagina-faleconosco .card p {
     font-size: 1.1rem;
     font-weight: 200;
     color: var(--text-card);
@@ -148,13 +130,13 @@ main{
     line-height: 1.5;
 }
 
-.card .barras {
+.pagina-faleconosco .card .barras {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.card .barras input {
+.pagina-faleconosco .card .barras input {
     display: block;
     width: 100%;
     background-color: var(--text-card);
@@ -164,9 +146,9 @@ main{
     font-size: 0.86rem;
     color: var(--text-header);
     outline: none;
-  
 }
-textarea {
+
+.pagina-faleconosco textarea {
     width: 100%;
     border-radius: 5px;
     padding: 12px 30px;
@@ -176,7 +158,7 @@ textarea {
     resize: vertical;
 }
 
-.card .btn-contato{
+.pagina-faleconosco .card .btn-contato {
     width: 100%;
     background-color: var(--button-card);
     font-size: 0.95rem;
@@ -195,34 +177,27 @@ textarea {
     transition: background 0.3s;
 }
 
-.btn-contato:hover{
-    background:#c80d5a;
-   
-    
+.pagina-faleconosco .btn-contato:hover {
+    background: #c80d5a;
 }
 
-#erroNome,
-#erroEmail,
-#erroTelefone,
-#erroMensagem{
-
-    color:rgb(199, 3, 3);
-   
-
-    font-size:14px;
-
-    margin-top:-10px;
-
-    margin-bottom:5px;
+.pagina-faleconosco #erroNome,
+.pagina-faleconosco #erroEmail,
+.pagina-faleconosco #erroTelefone,
+.pagina-faleconosco #erroMensagem {
+    color: rgb(199, 3, 3);
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 5px;
 }
 
-footer {
-  padding: 18px;
-  text-align: center;
-  background-color: var(--fundo-color);
+.pagina-faleconosco footer {
+    padding: 18px;
+    text-align: center;
+    background-color: var(--fundo-color);
 }
 
-footer p {
-  margin: 0;
-  color: var(--text-header);
+.pagina-faleconosco footer p {
+    margin: 0;
+    color: var(--text-header);
 }

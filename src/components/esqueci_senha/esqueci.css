@@ -1,0 +1,119 @@
+.pagina-esqueci {
+    background-color: #5d8e7c;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #007bff;
+    font-family: Arial, sans-serif;
+}
+
+.pagina-esqueci * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.pagina-esqueci.main-container {
+    width: 100%;
+    max-width: none;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.pagina-esqueci .password-card {
+    width: 100%;
+    max-width: 410px;
+    background-color: #0d633c;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.pagina-esqueci .card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.pagina-esqueci .back-button {
+    background-color: #d1e7dd;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.pagina-esqueci h1 {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+.pagina-esqueci .campo-senha {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.pagina-esqueci .input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #28a745;
+}
+
+.pagina-esqueci input[type="password"],
+.pagina-esqueci input[type="text"] {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border-radius: 8px;
+    border: none;
+    background-color: #f1f1f1;
+    font-size: 16px;
+}
+
+.pagina-esqueci input::placeholder {
+    color: #777;
+}
+
+.pagina-esqueci .toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+    cursor: pointer;
+}
+
+.pagina-esqueci .required-note {
+    color: #b1d7bd;
+    font-size: 12px;
+    margin-bottom: 25px;
+    margin-top: -5px;
+}
+
+.pagina-esqueci .submit-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #e91e63;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
