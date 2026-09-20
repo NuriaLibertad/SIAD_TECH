@@ -62,6 +62,17 @@ function App() {
     )
   }
 
+  } else if (pagina === 'transportes') {
+  conteudo = (
+    <Transportes
+      aoVoltar={() => setPagina('home')}
+      aoIrParaLogin={() => setPagina('login')}
+      aoIrParaDoacoes={() => setPagina('doacoes')}
+      aoIrParaFaleConosco={() => setPagina('faleconosco')}
+    />
+  )
+}
+
   return (
     <>
       {conteudo}
