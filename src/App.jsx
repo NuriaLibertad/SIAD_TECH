@@ -4,6 +4,7 @@ import Login from './components/login/login'
 import EsqueciSenha from './components/esqueci_senha/esqueci'
 import DoacoesOngs from './components/doacoes_ongs/doacoes'
 import FaleConosco from './components/fale_conosco/faleconosco'
+import Transportes from './components/transportes/transportes'
 
 
 
