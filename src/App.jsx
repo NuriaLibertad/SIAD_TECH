@@ -28,6 +28,7 @@ function App() {
         aoIrParaLogin={() => setPagina('login')}
         aoIrParaFaleConosco={() => setPagina('faleconosco')}
         aoIrParaDoacoes={() => setPagina('doacoes')}
+        aoIrParaTransportes={() => setPagina('transportes')}
       />
     )
   } else if (pagina === 'login') {
@@ -52,7 +53,7 @@ function App() {
         aoIrParaFaleConosco={() => setPagina('faleconosco')}
       />
     )
-  } else if (pagina === 'faleconosco') {
+ } else if (pagina === 'faleconosco') {
     conteudo = (
       <FaleConosco
         aoVoltar={() => setPagina('home')}
@@ -60,19 +61,16 @@ function App() {
         aoIrParaDoacoes={() => setPagina('doacoes')}
       />
     )
-  }
-
   } else if (pagina === 'transportes') {
-  conteudo = (
-    <Transportes
-      aoVoltar={() => setPagina('home')}
-      aoIrParaLogin={() => setPagina('login')}
-      aoIrParaDoacoes={() => setPagina('doacoes')}
-      aoIrParaFaleConosco={() => setPagina('faleconosco')}
-    />
-  )
-}
-
+    conteudo = (
+      <Transportes
+        aoVoltar={() => setPagina('home')}
+        aoIrParaLogin={() => setPagina('login')}
+        aoIrParaDoacoes={() => setPagina('doacoes')}
+        aoIrParaFaleConosco={() => setPagina('faleconosco')}
+      />
+    )
+  }
   return (
     <>
       {conteudo}
