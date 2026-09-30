@@ -8,7 +8,6 @@ import Transportes from './components/transportes/transportes'
 
 function App() {
   const [pagina, setPagina] = useState('home')
-  const [enviado, setEnviado] = useState(false)
 
   let conteudo
 
@@ -19,6 +18,7 @@ function App() {
         aoIrParaLogin={() => setPagina('login')}
         aoIrParaFaleConosco={() => setPagina('faleconosco')}
         aoIrParaDoacoes={() => setPagina('doacoes')}
+        aoIrParaTransportes={() => setPagina('transportes')}
       />
     )
   } else if (pagina === 'login') {
