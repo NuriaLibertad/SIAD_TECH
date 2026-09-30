@@ -1,3 +1,4 @@
+```css
 :root {
   --fundo: #F6F8F7;
   --verde-escuro: #20633A;
@@ -6,65 +7,121 @@
   --verde-claro: #DDEFE5;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  background-color: var(--fundo);
-  color: var(--verde-escuro);
+  background-color: #F6F8F7;
+  color: #20633A;
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.pagina-home {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .cabecalho {
-  background-color: var(--fundo);
+  background-color: #F6F8F7;
   border-bottom: 1px solid #dce8e0;
 }
 
+.navbar {
+  width: 100%;
+  padding: 10px 0;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .logo-area {
-  margin-left: 35px;
+  margin-left: 15px;
   display: flex;
   align-items: center;
   gap: 8px;
   font-weight: bold;
-  color: var(--verde-escuro);
+  color: #20633A;
+  text-decoration: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .logo {
-  width: 80px;
+  width: 65px;
   height: auto;
 }
 
 .logo-area strong {
-  color: var(--rosa);
+  color: #ED106A;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
 .nav-link {
-  color: var(--verde-escuro);
+  color: #20633A;
   font-weight: bold;
-  margin-left: 18px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 8px;
 }
 
-.botao-menu {
-  border: 1px solid var(--verde);
-  border-radius: 20px;
-  padding-left: 18px !important;
-  padding-right: 18px !important;
+.nav-link:hover {
+  color: #ED106A;
 }
 
 .hero {
   padding: 80px 0 50px;
-  background-color: white;
+  background-color: #FFFFFF;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.col-md-5 {
+  width: 41.666%;
+}
+
+.col-md-6 {
+  width: 50%;
+}
+
+.col-md-7 {
+  width: 58.333%;
 }
 
 .hero h1 {
   font-size: 42px;
   line-height: 1.05;
   font-weight: 800;
-  color: var(--verde-escuro);
+  color: #20633A;
+  margin: 0 0 18px;
 }
 
 .hero p,
 .informacoes p,
-.logistica p,
-.app p {
+.logistica p {
   color: #557062;
   line-height: 1.6;
 }
@@ -72,23 +129,30 @@ body {
 .botao-rosa {
   display: inline-block;
   padding: 12px 26px;
-  background-color: var(--rosa);
+  background-color: #ED106A;
   border: none;
   border-radius: 4px;
-  color: white;
+  color: #FFFFFF;
   font-weight: bold;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .botao-rosa:hover {
-  color: white;
+  color: #FFFFFF;
   opacity: 0.9;
 }
 
 .img-computador {
-  width: 250%;
-  max-width: 720px;
+  display: block;
+  width: 100%;
+  max-width: 500px;
   height: auto;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .texto-centro {
@@ -99,10 +163,22 @@ body {
 .texto-centro h2,
 .doacoes h2,
 .informacoes h2,
-.logistica h2,
-.app h2 {
+.logistica h2 {
   font-weight: 800;
-  color: var(--verde-escuro);
+  color: #20633A;
+}
+
+.texto-centro h2 {
+  font-size: 30px;
+}
+
+.texto-centro a {
+  color: #217F35;
+  font-weight: bold;
+}
+
+.texto-centro a:hover {
+  color: #ED106A;
 }
 
 .doacoes {
@@ -110,15 +186,33 @@ body {
   text-align: center;
 }
 
+.doacoes .row {
+  align-items: stretch;
+}
+
 .card-doacao {
   min-height: 120px;
   padding: 20px;
-  background-color: var(--verde-claro);
+  background-color: #DDEFE5;
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  color: #20633A;
+  height: 100%;
+}
+
+.g-3 {
+  gap: 16px;
+}
+
+.g-4 {
+  gap: 32px;
+}
+
+.g-5 {
+  gap: 40px;
 }
 
 .informacoes {
@@ -134,15 +228,16 @@ body {
   margin-bottom: 10px;
   padding: 10px 14px;
   background-color: #eaf7ef;
-  border: 1px solid var(--verde);
+  border: 1px solid #217F35;
   border-radius: 6px;
   font-weight: bold;
+  color: #20633A;
 }
 
 .lista-beneficios li::before,
 .lista-check li::before {
   content: "✓ ";
-  color: var(--verde);
+  color: #217F35;
   font-weight: bold;
 }
 
@@ -152,7 +247,7 @@ body {
 
 .caixa-logistica {
   padding: 35px;
-  border: 1px solid var(--verde);
+  border: 1px solid #217F35;
   border-radius: 6px;
   background-color: rgba(255, 255, 255, 0.5);
 }
@@ -166,48 +261,132 @@ body {
 .lista-check li {
   margin-bottom: 15px;
   font-weight: bold;
-}
-
-.app {
-  padding: 70px 0 0;
-  background-color: var(--verde);
-  color: white;
-  overflow: hidden;
-}
-
-.app h2,
-.app p {
-  color: white;
+  color: #20633A;
 }
 
 footer {
   padding: 18px;
   text-align: center;
-  background-color: var(--fundo);
+  background-color: #F6F8F7;
 }
 
 footer p {
   margin: 0;
-  color: var(--verde-escuro);
+  color: #20633A;
 }
 
 @media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+
+  .navbar .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
   .logo-area {
-    margin-left: 10px;
+    margin-left: 0;
+  }
+
+  .navbar-nav {
+    gap: 10px;
   }
 
   .hero {
-    padding-top: 45px;
+    padding: 45px 0 35px;
     text-align: center;
+  }
+
+  .col-md-5,
+  .col-md-6,
+  .col-md-7 {
+    width: 100%;
   }
 
   .hero h1 {
     font-size: 32px;
   }
 
+  .hero p {
+    font-size: 15px;
+  }
+
   .img-computador {
+    width: 90%;
+    max-width: 380px;
     margin-top: 35px;
   }
 
-  
+  .texto-centro {
+    padding: 35px 0;
   }
+
+  .texto-centro h2 {
+    font-size: 26px;
+  }
+
+  .doacoes {
+    padding: 30px 0 45px;
+  }
+
+  .card-doacao {
+    min-height: 90px;
+    font-size: 14px;
+  }
+
+  .informacoes {
+    padding: 45px 0;
+  }
+
+  .informacoes h2,
+  .logistica h2 {
+    font-size: 25px;
+  }
+
+  .logistica {
+    padding: 30px 0 50px;
+  }
+
+  .caixa-logistica {
+    padding: 22px;
+  }
+
+  footer {
+    padding: 15px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 92%;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .hero h1 {
+    font-size: 27px;
+  }
+
+  .texto-centro h2 {
+    font-size: 23px;
+  }
+
+  .card-doacao {
+    min-height: 80px;
+    padding: 12px;
+  }
+
+  .caixa-logistica {
+    padding: 18px;
+  }
+
+  .botao-rosa {
+    padding: 10px 20 px;
+  }
+}
+```
