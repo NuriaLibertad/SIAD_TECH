@@ -315,3 +315,16 @@ footer p {
     justify-content: center;
     gap: 10px;
   }
+
+  .pagina-home .row {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+}
+
+.pagina-home .row > * {
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 0;
+  max-width: 100%;
+}
