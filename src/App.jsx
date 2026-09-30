@@ -6,29 +6,19 @@ import DoacoesOngs from './components/doacoes_ongs/doacoes'
 import FaleConosco from './components/fale_conosco/faleconosco'
 import Transportes from './components/transportes/transportes'
 
-
-
 function App() {
-  // Controla qual "página" está sendo exibida no momento.
   const [pagina, setPagina] = useState('home')
+  const [enviado, setEnviado] = useState(false)
 
-  // Controla o estado do botão de "Faça Conexão"
-  const [enviado, setEnviado] = useState(false);
-
-
-  // Decide qual componente exibir com base no valor de "pagina".
   let conteudo
 
   if (pagina === 'home') {
     conteudo = (
       <Home
-        enviado={enviado}
-        setEnviado={setEnviado}
         aoIrParaHome={() => setPagina('home')}
         aoIrParaLogin={() => setPagina('login')}
         aoIrParaFaleConosco={() => setPagina('faleconosco')}
         aoIrParaDoacoes={() => setPagina('doacoes')}
-        aoIrParaTransportes={() => setPagina('transportes')}
       />
     )
   } else if (pagina === 'login') {
@@ -53,7 +43,7 @@ function App() {
         aoIrParaFaleConosco={() => setPagina('faleconosco')}
       />
     )
- } else if (pagina === 'faleconosco') {
+  } else if (pagina === 'faleconosco') {
     conteudo = (
       <FaleConosco
         aoVoltar={() => setPagina('home')}
@@ -71,11 +61,9 @@ function App() {
       />
     )
   }
-  return (
-    <>
-      {conteudo}
-    </>
-  )
+
+  return conteudo
 }
 
 export default App
+```
