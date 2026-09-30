@@ -10,7 +10,7 @@ function Doacoes({ aoVoltar, aoIrParaLogin, aoIrParaFaleConosco }) {
   }
 
   return (
-    <div className="pagina-doacoes">
+  <div className="pagina-doacoes">
       <header>
         <nav>
           <a
