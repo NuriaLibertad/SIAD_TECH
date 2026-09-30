@@ -1,346 +1,213 @@
-.pagina-home {
-    --fundo: #F6F8F7;
-    --verde-escuro: #20633A;
-    --verde: #217F35;
-    --rosa: #ED106A;
-    --verde-claro: #DDEFE5;
-
-    margin: 0;
-    min-height: 100vh;
-    background-color: var(--fundo);
-    color: var(--verde-escuro);
-    font-family: Arial, Helvetica, sans-serif;
+:root {
+  --fundo: #F6F8F7;
+  --verde-escuro: #20633A;
+  --verde: #217F35;
+  --rosa: #ED106A;
+  --verde-claro: #DDEFE5;
 }
 
-.pagina-home header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-    background-color: var(--verde-claro);
-    padding: 9px 32px;
+body {
+  margin: 0;
+  background-color: var(--fundo);
+  color: var(--verde-escuro);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.pagina-home nav {
-    width: 100%;
-    max-width: 1400px;
-    min-height: 60px;
-    margin: 0 auto;
-    padding: 6px 32px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.cabecalho {
+  background-color: var(--fundo);
+  border-bottom: 1px solid #dce8e0;
 }
 
-.pagina-home .logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    flex-shrink: 0;
+.logo-area {
+  margin-left: 35px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  color: var(--verde-escuro);
 }
 
-.pagina-home .logo img {
-    display: block;
-    width: 70px;
-    height: auto;
+.logo {
+  width: 80px;
+  height: auto;
 }
 
-.pagina-home .opcoes {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.logo-area strong {
+  color: var(--rosa);
 }
 
-.pagina-home .opcoes li {
-    margin: 0;
-    padding: 0;
+.nav-link {
+  color: var(--verde-escuro);
+  font-weight: bold;
+  margin-left: 18px;
 }
 
-.pagina-home .opcoes li a {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--verde);
-    text-decoration: none;
-    transition: color 0.2s ease;
+.botao-menu {
+  border: 1px solid var(--verde);
+  border-radius: 20px;
+  padding-left: 18px !important;
+  padding-right: 18px !important;
 }
 
-.pagina-home .opcoes li a:hover {
-    color: var(--rosa);
+.hero {
+  padding: 80px 0 50px;
+  background-color: white;
 }
 
-.pagina-home .button-header {
-    display: inline-block;
-    padding: 9px 20px;
-    background-color: var(--rosa);
-    border: none;
-    border-radius: 6px;
-    color: var(--fundo);
-    font-size: 0.95rem;
-    font-weight: 500;
-    text-decoration: none;
-    cursor: pointer;
-    transition: opacity 0.2s ease;
+.hero h1 {
+  font-size: 42px;
+  line-height: 1.05;
+  font-weight: 800;
+  color: var(--verde-escuro);
 }
 
-.pagina-home .button-header:hover {
-    opacity: 0.9;
+.hero p,
+.informacoes p,
+.logistica p,
+.app p {
+  color: #557062;
+  line-height: 1.6;
 }
 
-.pagina-home main {
-    width: 100%;
+.botao-rosa {
+  display: inline-block;
+  padding: 12px 26px;
+  background-color: var(--rosa);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-.pagina-home .hero {
-    min-height: 650px;
-    padding: 150px 8% 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
-    background-color: white;
+.botao-rosa:hover {
+  color: white;
+  opacity: 0.9;
 }
 
-.pagina-home .hero-texto {
-    width: 50%;
-    max-width: 620px;
+.img-computador {
+  width: 250%;
+  max-width: 720px;
+  height: auto;
 }
 
-.pagina-home .hero-texto h1 {
-    margin: 0 0 24px;
-    font-size: 42px;
-    line-height: 1.05;
-    font-weight: 800;
-    color: var(--verde-escuro);
+.texto-centro {
+  padding: 45px 0;
+  text-align: center;
 }
 
-.pagina-home .hero-texto p {
-    margin: 0 0 30px;
-    color: #557062;
-    font-size: 17px;
-    line-height: 1.6;
+.texto-centro h2,
+.doacoes h2,
+.informacoes h2,
+.logistica h2,
+.app h2 {
+  font-weight: 800;
+  color: var(--verde-escuro);
 }
 
-.pagina-home .hero-texto button {
-    display: inline-block;
-    padding: 12px 26px;
-    background-color: var(--rosa);
-    border: none;
-    border-radius: 4px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: opacity 0.2s ease;
+.doacoes {
+  padding: 35px 0 55px;
+  text-align: center;
 }
 
-.pagina-home .hero-texto button:hover {
-    opacity: 0.9;
+.card-doacao {
+  min-height: 120px;
+  padding: 20px;
+  background-color: var(--verde-claro);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
 }
 
-.pagina-home .hero-imagem {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.informacoes {
+  padding: 60px 0;
 }
 
-.pagina-home .hero-imagem img {
-    display: block;
-    width: 100%;
-    max-width: 620px;
-    height: auto;
+.lista-beneficios {
+  padding: 0;
+  list-style: none;
 }
 
-.pagina-home .sobre {
-    padding: 70px 10%;
-    text-align: center;
-    background-color: var(--fundo);
+.lista-beneficios li {
+  margin-bottom: 10px;
+  padding: 10px 14px;
+  background-color: #eaf7ef;
+  border: 1px solid var(--verde);
+  border-radius: 6px;
+  font-weight: bold;
 }
 
-.pagina-home .sobre h2,
-.pagina-home .objetivos h2 {
-    margin: 0 0 20px;
-    font-size: 32px;
-    font-weight: 800;
-    color: var(--verde-escuro);
+.lista-beneficios li::before,
+.lista-check li::before {
+  content: "✓ ";
+  color: var(--verde);
+  font-weight: bold;
 }
 
-.pagina-home .sobre p {
-    max-width: 850px;
-    margin: 0 auto 15px;
-    color: #557062;
-    line-height: 1.6;
+.logistica {
+  padding: 40px 0 70px;
 }
 
-.pagina-home .objetivos {
-    padding: 70px 8%;
-    background-color: white;
-    text-align: center;
+.caixa-logistica {
+  padding: 35px;
+  border: 1px solid var(--verde);
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
-.pagina-home .cards {
-    max-width: 1100px;
-    margin: 40px auto 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+.lista-check {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.pagina-home .card {
-    min-height: 180px;
-    padding: 30px 25px;
-    background-color: var(--verde-claro);
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.lista-check li {
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
-.pagina-home .card h3 {
-    margin: 0 0 15px;
-    color: var(--verde-escuro);
-    font-size: 21px;
-    font-weight: 700;
+.app {
+  padding: 70px 0 0;
+  background-color: var(--verde);
+  color: white;
+  overflow: hidden;
 }
 
-.pagina-home .card p {
-    margin: 0;
-    color: #557062;
-    line-height: 1.5;
+.app h2,
+.app p {
+  color: white;
 }
 
-.pagina-home footer {
-    padding: 18px;
-    text-align: center;
-    background-color: var(--fundo);
+footer {
+  padding: 18px;
+  text-align: center;
+  background-color: var(--fundo);
 }
 
-.pagina-home footer p {
-    margin: 0;
-    color: var(--verde-escuro);
-}
-
-@media (max-width: 900px) {
-    .pagina-home nav {
-        padding: 6px 15px;
-    }
-
-    .pagina-home .opcoes {
-        gap: 15px;
-    }
-
-    .pagina-home .hero {
-        padding-left: 6%;
-        padding-right: 6%;
-        gap: 30px;
-    }
-
-    .pagina-home .hero-texto h1 {
-        font-size: 36px;
-    }
-
-    .pagina-home .cards {
-        gap: 15px;
-    }
+footer p {
+  margin: 0;
+  color: var(--verde-escuro);
 }
 
 @media (max-width: 768px) {
-    .pagina-home header {
-        position: relative;
-        padding: 8px 15px;
-    }
+  .logo-area {
+    margin-left: 10px;
+  }
 
-    .pagina-home nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
+  .hero {
+    padding-top: 45px;
+    text-align: center;
+  }
 
-    .pagina-home .logo {
-        width: 100%;
-        justify-content: center;
-    }
+  .hero h1 {
+    font-size: 32px;
+  }
 
-    .pagina-home .opcoes {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
-    }
+  .img-computador {
+    margin-top: 35px;
+  }
 
-    .pagina-home .button-header {
-        margin-bottom: 5px;
-    }
-
-    .pagina-home .hero {
-        min-height: auto;
-        padding: 60px 25px;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .pagina-home .hero-texto,
-    .pagina-home .hero-imagem {
-        width: 100%;
-        max-width: 600px;
-    }
-
-    .pagina-home .hero-texto h1 {
-        font-size: 32px;
-    }
-
-    .pagina-home .hero-texto p {
-        font-size: 16px;
-    }
-
-    .pagina-home .hero-imagem {
-        margin-top: 20px;
-    }
-
-    .pagina-home .hero-imagem img {
-        max-width: 450px;
-    }
-
-    .pagina-home .sobre {
-        padding: 55px 25px;
-    }
-
-    .pagina-home .objetivos {
-        padding: 55px 25px;
-    }
-
-    .pagina-home .cards {
-        grid-template-columns: 1fr;
-        max-width: 500px;
-    }
-}
-
-@media (max-width: 480px) {
-    .pagina-home .opcoes {
-        gap: 10px;
-    }
-
-    .pagina-home .opcoes li a {
-        font-size: 0.85rem;
-    }
-
-    .pagina-home .button-header {
-        padding: 8px 16px;
-    }
-
-    .pagina-home .hero {
-        padding: 45px 20px;
-    }
-
-    .pagina-home .hero-texto h1 {
-        font-size: 28px;
-    }
-
-    .pagina-home .sobre h2,
-    .pagina-home .objetivos h2 {
-        font-size: 27px;
-    }
-}
+  
+  }
