@@ -4,55 +4,52 @@ import "./style.css"
 
 function Home({
   aoIrParaLogin,
-  aoIrParaDoacoes,
   aoIrParaFaleConosco,
   aoIrParaHome,
+  aoIrParaDoacoes,
   aoIrParaTransportes
 }) {
   return (
     <div className="pagina-home">
 
-      ```jsx
-<header className="cabecalho">
-  <nav className="navbar">
-    <div className="container">
-
-      <button className="logo-area" onClick={aoIrParaHome}>
-        <img src={logo} alt="Logo SIAD Tech" className="logo" />
-        <span>
-          SIAD <strong>Tech</strong>
-        </span>
-      </button>
-
       <header className="cabecalho">
-      <div className="navbar-nav">
+        <nav className="navbar">
+          <div className="container">
 
-        <button className="nav-link" onClick={aoIrParaHome}>
-          Home
-        </button>
+            <button className="logo-area" onClick={aoIrParaHome}>
+              <img src={logo} alt="Logo SIAD Tech" className="logo" />
+              <span>
+                SIAD <strong>Tech</strong>
+              </span>
+            </button>
 
-        <button className="nav-link" onClick={aoIrParaDoacoes}>
-          Doações + ONGs
-        </button>
+            <div className="navbar-nav">
 
-        <button className="nav-link" onClick={aoIrParaTransportes}>
-          Transporte
-        </button>
+              <button className="nav-link" onClick={aoIrParaHome}>
+                Home
+              </button>
 
-        <button className="nav-link" onClick={aoIrParaFaleConosco}>
-          Fale Conosco
-        </button>
+              <button className="nav-link" onClick={aoIrParaDoacoes}>
+                Doações + ONGs
+              </button>
 
-        <button className="nav-link botao-entrar" onClick={aoIrParaLogin}>
-          Entrar
-        </button>
+              <button className="nav-link" onClick={aoIrParaTransportes}>
+                Transporte
+              </button>
 
-      </div>
+              <button className="nav-link" onClick={aoIrParaFaleConosco}>
+                Fale Conosco
+              </button>
 
-    </div>
-  </nav>
-</header>
+              <button className="nav-link botao-entrar" onClick={aoIrParaLogin}>
+                Entrar
+              </button>
 
+            </div>
+
+          </div>
+        </nav>
+      </header>
 
       <main>
 
@@ -320,4 +317,3 @@ function Home({
 }
 
 export default Home
-
