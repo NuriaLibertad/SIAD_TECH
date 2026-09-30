@@ -1,6 +1,6 @@
 import logo from "../../assets/./images/logosemfundo.png";
 import computador from "../../assets/./images/computador.png";
-import "./style.css";
+import './style.css'
 
 function Home({
   enviado,
