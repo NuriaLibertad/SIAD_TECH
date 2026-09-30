@@ -56,6 +56,7 @@ body {
   background: transparent;
   cursor: pointer;
   font-size: 16px;
+  white-space: nowrap;
 }
 
 .logo {
@@ -69,11 +70,17 @@ body {
 
 .navbar-nav {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: flex-end;
   gap: 18px;
+  margin-left: auto;
 }
 
 .nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: #20633A;
   font-weight: bold;
   border: none;
@@ -81,10 +88,24 @@ body {
   cursor: pointer;
   font-size: 16px;
   padding: 8px;
+  white-space: nowrap;
 }
 
 .nav-link:hover {
   color: #ED106A;
+}
+
+.botao-entrar {
+  background-color: #ED106A;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+.botao-entrar:hover {
+  background-color: #ED106A;
+  color: #FFFFFF;
+  opacity: 0.9;
 }
 
 .hero {
@@ -289,102 +310,8 @@ footer p {
   }
 
   .navbar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
   }
-
-  .hero {
-    padding: 45px 0 35px;
-    text-align: center;
-  }
-
-  .col-md-5,
-  .col-md-6,
-  .col-md-7 {
-    width: 100%;
-  }
-
-  .hero h1 {
-    font-size: 32px;
-  }
-
-  .hero p {
-    font-size: 15px;
-  }
-
-  .img-computador {
-    width: 90%;
-    max-width: 380px;
-    margin-top: 35px;
-  }
-
-  .texto-centro {
-    padding: 35px 0;
-  }
-
-  .texto-centro h2 {
-    font-size: 26px;
-  }
-
-  .doacoes {
-    padding: 30px 0 45px;
-  }
-
-  .card-doacao {
-    min-height: 90px;
-    font-size: 14px;
-  }
-
-  .informacoes {
-    padding: 45px 0;
-  }
-
-  .informacoes h2,
-  .logistica h2 {
-    font-size: 25px;
-  }
-
-  .logistica {
-    padding: 30px 0 50px;
-  }
-
-  .caixa-logistica {
-    padding: 22px;
-  }
-
-  footer {
-    padding: 15px;
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    width: 92%;
-  }
-
-  .navbar-nav {
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  .hero h1 {
-    font-size: 27px;
-  }
-
-  .texto-centro h2 {
-    font-size: 23px;
-  }
-
-  .card-doacao {
-    min-height: 80px;
-    padding: 12px;
-  }
-
-  .caixa-logistica {
-    padding: 18px;
-  }
-
-  .botao-rosa {
-    padding: 10px 20 px;
-  }
-}
