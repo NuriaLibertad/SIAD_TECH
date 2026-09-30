@@ -326,5 +326,5 @@ function Transportes({
         <section className="secao">
           <div className="container">
 
-            <h2 className="titulo
+           className="titulo-secao"
 
