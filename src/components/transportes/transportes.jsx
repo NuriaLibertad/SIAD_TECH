@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './transportes.css'
 
 function Transportes({
   aoVoltar,
