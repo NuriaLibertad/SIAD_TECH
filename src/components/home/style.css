@@ -6,6 +6,13 @@
   --verde-claro: #DDEFE5;
 }
 
+
+.img-computador {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+}
+
 body {
   margin: 0;
   background-color: var(--fundo);
@@ -83,12 +90,6 @@ body {
 .botao-rosa:hover {
   color: white;
   opacity: 0.9;
-}
-
-.img-computador {
-  width: 250%;
-  max-width: 720px;
-  height: auto;
 }
 
 .texto-centro {
