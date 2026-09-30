@@ -112,81 +112,55 @@ function Transportes({
   }
 
   return (
-    <>
+    <div className="pagina-transportes">
+
       <header className="cabecalho">
-        <nav className="navbar navbar-expand-lg">
+        <nav className="navbar">
           <div className="container">
 
             <button
-              className="navbar-brand logo-area border-0 bg-transparent"
+              className="logo-area"
               onClick={aoVoltar}
             >
-              <img
-                src="assets/logo.svg"
-                className="logo-img"
-                alt="Logo SIAD Tech"
-              />
-
               <span>
                 SIAD <strong>Tech</strong>
               </span>
             </button>
 
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#menu"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
+            <div className="navbar-nav">
 
-            <div className="collapse navbar-collapse" id="menu">
-              <ul className="navbar-nav ms-auto">
+              <button
+                className="nav-link"
+                onClick={aoVoltar}
+              >
+                Home
+              </button>
 
-                <li className="nav-item">
-                  <button
-                    className="nav-link border-0 bg-transparent"
-                    onClick={aoVoltar}
-                  >
-                    Home
-                  </button>
-                </li>
+              <button
+                className="nav-link"
+                onClick={aoIrParaDoacoes}
+              >
+                Doações + ONGs
+              </button>
 
-                <li className="nav-item">
-                  <button
-                    className="nav-link border-0 bg-transparent"
-                    onClick={aoIrParaDoacoes}
-                  >
-                    Doações + ONGs
-                  </button>
-                </li>
+              <button className="nav-link ativo">
+                Transporte
+              </button>
 
-                <li className="nav-item">
-                  <button className="nav-link ativo border-0 bg-transparent">
-                    Transportes
-                  </button>
-                </li>
+              <button
+                className="nav-link"
+                onClick={aoIrParaFaleConosco}
+              >
+                Fale Conosco
+              </button>
 
-                <li className="nav-item">
-                  <button
-                    className="nav-link link-contato border-0 bg-transparent"
-                    onClick={aoIrParaFaleConosco}
-                  >
-                    Fale Conosco
-                  </button>
-                </li>
+              <button
+                className="nav-link botao-entrar"
+                onClick={aoIrParaLogin}
+              >
+                Entrar
+              </button>
 
-                <li className="nav-item">
-                  <button
-                    className="nav-link border-0 bg-transparent"
-                    onClick={aoIrParaLogin}
-                  >
-                    Login
-                  </button>
-                </li>
-
-              </ul>
             </div>
 
           </div>
@@ -352,164 +326,5 @@ function Transportes({
         <section className="secao">
           <div className="container">
 
-            <h2 className="titulo-secao">
-              Como a rota funciona?
-            </h2>
+            <h2 className="titulo
 
-            <div className="fluxo">
-              <div className="row g-3">
-
-                {etapas.map((etapa, indice) => (
-                  <div
-                    className="col-6 col-md"
-                    key={etapa.nome}
-                  >
-                    <div
-                      className={
-                        indice === etapaAtual
-                          ? "etapa ativa"
-                          : "etapa"
-                      }
-                      onClick={() => setEtapaAtual(indice)}
-                    >
-                      <span>{etapa.icone}</span>
-                      <h3>{etapa.nome}</h3>
-                      <p>{etapa.resumo}</p>
-                    </div>
-                  </div>
-                ))}
-
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        <section className="secao pt-0">
-          <div className="container">
-
-            <div className="row g-4">
-
-              <div className="col-md-5">
-                <div className="cartao-explicacao">
-
-                  <h3>
-                    {etapas[etapaAtual].nome}
-                  </h3>
-
-                  <p>
-                    {etapas[etapaAtual].texto}
-                  </p>
-
-                  <p>
-                    Essa explicação muda quando você clica
-                    em cada etapa do fluxo, deixando a tela
-                    mais dinâmica e fácil de apresentar.
-                  </p>
-
-                </div>
-              </div>
-
-              <div className="col-md-7">
-                <div className="tabela-rotas">
-
-                  <table className="table table-hover">
-
-                    <thead>
-                      <tr>
-                        <th>Origem</th>
-                        <th>Destino</th>
-                        <th>Alimento</th>
-                        <th>Status</th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-
-                      {rotas.map((rota, indice) => (
-                        <tr
-                          className="linha-clicavel"
-                          key={indice}
-                          onClick={() =>
-                            setEtapaAtual(rota.etapa)
-                          }
-                        >
-
-                          <td>{rota.origem}</td>
-                          <td>{rota.destino}</td>
-                          <td>{rota.alimento}</td>
-
-                          <td>
-                            <span
-                              className={classeStatus(
-                                rota.status
-                              )}
-                            >
-                              {rota.status}
-                            </span>
-                          </td>
-
-                        </tr>
-                      ))}
-
-                    </tbody>
-
-                  </table>
-
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </section>
-
-        <section className="secao" id="contato">
-          <div className="container">
-
-            <div className="painel-interacoes">
-
-              <h2>Interações da tela</h2>
-
-              <ul>
-
-                <li>
-                  O botão Nova rota abre um pequeno cadastro
-                  de transporte.
-                </li>
-
-                <li>
-                  A tabela funciona como uma planilha simples
-                  de acompanhamento.
-                </li>
-
-                <li>
-                  Ao clicar em uma rota, a etapa do transporte
-                  fica destacada.
-                </li>
-
-                <li>
-                  Ao clicar no fluxo, a explicação da etapa
-                  aparece ao lado.
-                </li>
-
-              </ul>
-
-            </div>
-
-          </div>
-        </section>
-
-      </main>
-
-      <footer>
-        <p>
-          SIAD Tech - Transporte solidário contra o desperdício
-          de alimentos.
-        </p>
-      </footer>
-    </>
-  )
-}
-
-export default Transportes
