@@ -12,40 +12,47 @@ function Home({
   return (
     <div className="pagina-home">
 
+      ```jsx
+<header className="cabecalho">
+  <nav className="navbar">
+    <div className="container">
+
+      <button className="logo-area" onClick={aoIrParaHome}>
+        <img src={logo} alt="Logo SIAD Tech" className="logo" />
+        <span>
+          SIAD <strong>Tech</strong>
+        </span>
+      </button>
+
       <header className="cabecalho">
-        <nav className="navbar">
-          <div className="container">
+      <div className="navbar-nav">
 
-            <button className="logo-area" onClick={aoIrParaHome}>
-              <img src={logo} alt="Logo SIAD Tech" className="logo" />
-              <span>
-                SIAD <strong>Tech</strong>
-              </span>
-            </button>
+        <button className="nav-link" onClick={aoIrParaHome}>
+          Home
+        </button>
 
-            <div className="navbar-nav">
+        <button className="nav-link" onClick={aoIrParaDoacoes}>
+          Doações + ONGs
+        </button>
 
-              <button className="nav-link" onClick={aoIrParaLogin}>
-                Entrar
-              </button>
+        <button className="nav-link" onClick={aoIrParaTransportes}>
+          Transporte
+        </button>
 
-              <button className="nav-link" onClick={aoIrParaDoacoes}>
-                Doações + ONGs
-              </button>
+        <button className="nav-link" onClick={aoIrParaFaleConosco}>
+          Fale Conosco
+        </button>
 
-              <button className="nav-link" onClick={aoIrParaTransportes}>
-                Transportes
-              </button>
+        <button className="nav-link botao-entrar" onClick={aoIrParaLogin}>
+          Entrar
+        </button>
 
-              <button className="nav-link" onClick={aoIrParaFaleConosco}>
-                Fale Conosco
-              </button>
+      </div>
 
-            </div>
+    </div>
+  </nav>
+</header>
 
-          </div>
-        </nav>
-      </header>
 
       <main>
 
