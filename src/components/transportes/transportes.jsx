@@ -1,123 +1,93 @@
 import { useState } from 'react'
 import './transportes.css'
 
+const etapas = [
+  {
+    nome: "CEAGESP",
+    icone: "1",
+    resumo: "Coleta",
+    texto: "Os alimentos que perderam valor comercial, mas ainda podem ser consumidos, são separados para doação."
+  },
+  {
+    nome: "Triagem",
+    icone: "2",
+    resumo: "Qualidade",
+    texto: "A equipe verifica o estado dos alimentos e organiza tudo por tipo, urgência e destino."
+  },
+  {
+    nome: "Transporte",
+    icone: "3",
+    resumo: "Rota rápida",
+    texto: "O transporte leva os alimentos com agilidade para evitar perdas durante o caminho."
+  },
+  {
+    nome: "ONG",
+    icone: "4",
+    resumo: "Recebimento",
+    texto: "A ONG cadastrada recebe os alimentos e confirma a chegada no sistema."
+  },
+  {
+    nome: "Famílias",
+    icone: "5",
+    resumo: "Distribuição",
+    texto: "Os alimentos chegam até famílias em situação de vulnerabilidade social."
+  }
+]
+
+const rotasIniciais = [
+  { origem: "CEAGESP", destino: "ONG Vida", alimento: "Verduras", status: "Coleta", etapa: 0 },
+  { origem: "Mercado Central", destino: "Famílias", alimento: "Frutas", status: "Urgente", etapa: 2 },
+  { origem: "Supermercado Bom Preço", destino: "ONG Esperança", alimento: "Alimentos secos", status: "Entregue", etapa: 4 }
+]
+
+const formularioVazio = { origem: "", destino: "", alimento: "", status: "Coleta" }
+
 function Transportes({
   aoVoltar,
   aoIrParaLogin,
   aoIrParaDoacoes,
   aoIrParaFaleConosco
 }) {
-  const etapas = [
-    {
-      nome: "CEAGESP",
-      icone: "1",
-      resumo: "Coleta",
-      texto: "Os alimentos que perderam valor comercial, mas ainda podem ser consumidos, são separados para doação."
-    },
-    {
-      nome: "Triagem",
-      icone: "2",
-      resumo: "Qualidade",
-      texto: "A equipe verifica o estado dos alimentos e organiza tudo por tipo, urgência e destino."
-    },
-    {
-      nome: "Transporte",
-      icone: "3",
-      resumo: "Rota rápida",
-      texto: "O transporte leva os alimentos com agilidade para evitar perdas durante o caminho."
-    },
-    {
-      nome: "ONG",
-      icone: "4",
-      resumo: "Recebimento",
-      texto: "A ONG cadastrada recebe os alimentos e confirma a chegada no sistema."
-    },
-    {
-      nome: "Famílias",
-      icone: "5",
-      resumo: "Distribuição",
-      texto: "Os alimentos chegam até famílias em situação de vulnerabilidade social."
-    }
-  ]
-
-  const rotasIniciais = [
-    {
-      origem: "CEAGESP",
-      destino: "ONG Vida",
-      alimento: "Verduras",
-      status: "Coleta",
-      etapa: 0
-    },
-    {
-      origem: "Mercado Central",
-      destino: "Famílias",
-      alimento: "Frutas",
-      status: "Urgente",
-      etapa: 2
-    },
-    {
-      origem: "Supermercado Bom Preço",
-      destino: "ONG Esperança",
-      alimento: "Alimentos secos",
-      status: "Entregue",
-      etapa: 4
-    }
-  ]
-
   const [etapaAtual, setEtapaAtual] = useState(0)
   const [rotas, setRotas] = useState(rotasIniciais)
   const [mostrarFormulario, setMostrarFormulario] = useState(false)
-
-  const [novaRota, setNovaRota] = useState({
-    origem: "",
-    destino: "",
-    alimento: "",
-    status: "Coleta"
-  })
+  const [novaRota, setNovaRota] = useState(formularioVazio)
 
   function classeStatus(status) {
-    if (status === "Urgente") {
-      return "status status-urgente"
-    }
-
-    if (status === "Entregue") {
-      return "status status-entregue"
-    }
-
+    if (status === "Urgente") return "status status-urgente"
+    if (status === "Entregue") return "status status-entregue"
     return "status status-coleta"
+  }
+
+  function atualizarCampo(campo, valor) {
+    setNovaRota({ ...novaRota, [campo]: valor })
   }
 
   function cadastrarRota(evento) {
     evento.preventDefault()
 
-    if (
-      !novaRota.origem ||
-      !novaRota.destino ||
-      !novaRota.alimento
-    ) {
+    const origem = novaRota.origem.trim()
+    const destino = novaRota.destino.trim()
+    const alimento = novaRota.alimento.trim()
+
+    if (!origem || !destino || !alimento) {
       alert("Preencha origem, destino e alimento.")
       return
     }
 
     const rota = {
-      ...novaRota,
+      origem,
+      destino,
+      alimento,
+      status: novaRota.status,
       etapa:
-        novaRota.status === "Entregue"
-          ? 4
-          : novaRota.status === "Urgente"
-            ? 2
-            : 0
+        novaRota.status === "Entregue" ? 4
+        : novaRota.status === "Urgente" ? 2
+        : 0
     }
 
     setRotas([...rotas, rota])
-
-    setNovaRota({
-      origem: "",
-      destino: "",
-      alimento: "",
-      status: "Coleta"
-    })
-
+    setNovaRota(formularioVazio)
     setMostrarFormulario(false)
   }
 
@@ -128,49 +98,32 @@ function Transportes({
         <nav className="navbar">
           <div className="container">
 
-            <button
-              className="logo-area"
-              onClick={aoVoltar}
-            >
+            <button type="button" className="logo-area" onClick={aoVoltar}>
               <span>
                 SIAD <strong>Tech</strong>
               </span>
             </button>
 
             <div className="navbar-nav">
-
-              <button
-                className="nav-link"
-                onClick={aoVoltar}
-              >
+              <button type="button" className="nav-link" onClick={aoVoltar}>
                 Home
               </button>
 
-              <button
-                className="nav-link"
-                onClick={aoIrParaDoacoes}
-              >
+              <button type="button" className="nav-link" onClick={aoIrParaDoacoes}>
                 Doações + ONGs
               </button>
 
-              <button className="nav-link ativo">
+              <button type="button" className="nav-link ativo">
                 Transporte
               </button>
 
-              <button
-                className="nav-link"
-                onClick={aoIrParaFaleConosco}
-              >
+              <button type="button" className="nav-link" onClick={aoIrParaFaleConosco}>
                 Fale Conosco
               </button>
 
-              <button
-                className="nav-link botao-entrar"
-                onClick={aoIrParaLogin}
-              >
+              <button type="button" className="nav-link botao-entrar" onClick={aoIrParaLogin}>
                 Entrar
               </button>
-
             </div>
 
           </div>
@@ -184,10 +137,7 @@ function Transportes({
             <div className="row align-items-center">
 
               <div className="col-md-6">
-
-                <span className="subtitulo">
-                  Logística solidária
-                </span>
+                <span className="subtitulo">Logística solidária</span>
 
                 <h1>TRANSPORTES</h1>
 
@@ -201,29 +151,23 @@ function Transportes({
                 </p>
 
                 <button
+                  type="button"
                   className="botao-rosa"
-                  onClick={() =>
-                    setMostrarFormulario(!mostrarFormulario)
-                  }
+                  onClick={() => setMostrarFormulario(!mostrarFormulario)}
                 >
                   Nova rota
                 </button>
-
               </div>
 
               <div className="col-md-6">
-
                 <div className="cartao-mapa">
-
                   <div className="mapa-falso">
                     <div className="linha-rota"></div>
                     <div className="ponto ponto-origem"></div>
                     <div className="ponto ponto-meio"></div>
                     <div className="ponto ponto-destino"></div>
                   </div>
-
                 </div>
-
               </div>
 
             </div>
@@ -232,88 +176,53 @@ function Transportes({
 
         {mostrarFormulario && (
           <section className="secao">
-
             <div className="container">
 
-              <form
-                className="formulario-rota"
-                onSubmit={cadastrarRota}
-              >
-
-                <h2 className="titulo-secao">
-                  Cadastrar nova rota
-                </h2>
+              <form className="formulario-rota" onSubmit={cadastrarRota}>
+                <h2 className="titulo-secao">Cadastrar nova rota</h2>
 
                 <div className="row g-3">
 
                   <div className="col-md-3">
-                    <label className="form-label">
-                      Origem
-                    </label>
-
+                    <label className="form-label" htmlFor="rota-origem">Origem</label>
                     <input
+                      id="rota-origem"
                       className="form-control"
                       value={novaRota.origem}
-                      onChange={(e) =>
-                        setNovaRota({
-                          ...novaRota,
-                          origem: e.target.value
-                        })
-                      }
+                      onChange={(e) => atualizarCampo("origem", e.target.value)}
                       placeholder="Ex: CEAGESP"
                     />
                   </div>
 
                   <div className="col-md-3">
-                    <label className="form-label">
-                      Destino
-                    </label>
-
+                    <label className="form-label" htmlFor="rota-destino">Destino</label>
                     <input
+                      id="rota-destino"
                       className="form-control"
                       value={novaRota.destino}
-                      onChange={(e) =>
-                        setNovaRota({
-                          ...novaRota,
-                          destino: e.target.value
-                        })
-                      }
+                      onChange={(e) => atualizarCampo("destino", e.target.value)}
                       placeholder="Ex: ONG Vida"
                     />
                   </div>
 
                   <div className="col-md-3">
-                    <label className="form-label">
-                      Alimento
-                    </label>
-
+                    <label className="form-label" htmlFor="rota-alimento">Alimento</label>
                     <input
+                      id="rota-alimento"
                       className="form-control"
                       value={novaRota.alimento}
-                      onChange={(e) =>
-                        setNovaRota({
-                          ...novaRota,
-                          alimento: e.target.value
-                        })
-                      }
+                      onChange={(e) => atualizarCampo("alimento", e.target.value)}
                       placeholder="Ex: Frutas"
                     />
                   </div>
 
                   <div className="col-md-3">
-                    <label className="form-label">
-                      Status
-                    </label>
-
+                    <label className="form-label" htmlFor="rota-status">Status</label>
                     <select
+                      id="rota-status"
                       className="form-select"
                       value={novaRota.status}
-                      onChange={(e) =>
-                        setNovaRota({
-                          ...novaRota,
-                          status: e.target.value
-                        })
-                      }
+                      onChange={(e) => atualizarCampo("status", e.target.value)}
                     >
                       <option>Coleta</option>
                       <option>Urgente</option>
@@ -323,100 +232,70 @@ function Transportes({
 
                 </div>
 
-                <button
-                  className="botao-rosa mt-4"
-                  type="submit"
-                >
+                <button className="botao-rosa mt-4" type="submit">
                   Salvar rota
                 </button>
-
               </form>
 
             </div>
-
           </section>
         )}
 
         <section className="secao">
-
           <div className="container">
 
-            <h2 className="titulo-secao">
-              Como a rota funciona?
-            </h2>
+            <h2 className="titulo-secao">Como a rota funciona?</h2>
 
             <div className="fluxo">
-
               <div className="row g-3">
 
                 {etapas.map((etapa, indice) => (
-                  <div
-                    className="col-6 col-md"
-                    key={etapa.nome}
-                  >
-
+                  <div className="col-6 col-md" key={etapa.nome}>
                     <div
-                      className={
-                        indice === etapaAtual
-                          ? "etapa ativa"
-                          : "etapa"
-                      }
-                      onClick={() =>
-                        setEtapaAtual(indice)
-                      }
+                      className={indice === etapaAtual ? "etapa ativa" : "etapa"}
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => setEtapaAtual(indice)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault()
+                          setEtapaAtual(indice)
+                        }
+                      }}
                     >
-
                       <span>{etapa.icone}</span>
-
                       <h3>{etapa.nome}</h3>
-
                       <p>{etapa.resumo}</p>
-
                     </div>
-
                   </div>
                 ))}
 
               </div>
-
             </div>
 
           </div>
-
         </section>
 
         <section className="secao pt-0">
-
           <div className="container">
-
             <div className="row g-4">
 
               <div className="col-md-5">
-
                 <div className="cartao-explicacao">
+                  <h3>{etapas[etapaAtual].nome}</h3>
 
-                  <h3>
-                    {etapas[etapaAtual].nome}
-                  </h3>
-
-                  <p>
-                    {etapas[etapaAtual].texto}
-                  </p>
+                  <p>{etapas[etapaAtual].texto}</p>
 
                   <p>
-                    Essa explicação muda quando você clica
-                    em cada etapa do fluxo, deixando a tela
-                    mais dinâmica e fácil de apresentar.
+                    Essa explicação muda quando você clica em cada etapa
+                    do fluxo, deixando a tela mais dinâmica e fácil de
+                    apresentar.
                   </p>
-
                 </div>
-
               </div>
 
               <div className="col-md-7">
-
                 <div className="tabela-rotas">
-
                   <table className="table table-hover">
 
                     <thead>
@@ -429,99 +308,55 @@ function Transportes({
                     </thead>
 
                     <tbody>
-
                       {rotas.map((rota, indice) => (
                         <tr
                           className="linha-clicavel"
                           key={indice}
-                          onClick={() =>
-                            setEtapaAtual(rota.etapa)
-                          }
+                          onClick={() => setEtapaAtual(rota.etapa)}
                         >
-
                           <td>{rota.origem}</td>
                           <td>{rota.destino}</td>
                           <td>{rota.alimento}</td>
-
                           <td>
-                            <span
-                              className={
-                                classeStatus(rota.status)
-                              }
-                            >
+                            <span className={classeStatus(rota.status)}>
                               {rota.status}
                             </span>
                           </td>
-
                         </tr>
                       ))}
-
                     </tbody>
 
                   </table>
-
                 </div>
-
               </div>
 
             </div>
-
           </div>
-
         </section>
 
-        <section
-          className="secao"
-          id="contato"
-        >
-
+        <section className="secao" id="contato">
           <div className="container">
-
             <div className="painel-interacoes">
 
-              <h2>
-                Interações da tela
-              </h2>
+              <h2>Interações da tela</h2>
 
               <ul>
-
-                <li>
-                  O botão Nova rota abre um pequeno cadastro
-                  de transporte.
-                </li>
-
-                <li>
-                  A tabela funciona como uma planilha simples
-                  de acompanhamento.
-                </li>
-
-                <li>
-                  Ao clicar em uma rota, a etapa do transporte
-                  fica destacada.
-                </li>
-
-                <li>
-                  Ao clicar no fluxo, a explicação da etapa
-                  aparece ao lado.
-                </li>
-
+                <li>O botão Nova rota abre um pequeno cadastro de transporte.</li>
+                <li>A tabela funciona como uma planilha simples de acompanhamento.</li>
+                <li>Ao clicar em uma rota, a etapa do transporte fica destacada.</li>
+                <li>Ao clicar no fluxo, a explicação da etapa aparece ao lado.</li>
               </ul>
 
             </div>
-
           </div>
-
         </section>
 
       </main>
 
       <footer>
-
         <p>
-          SIAD Tech - Transporte solidário contra o desperdício
-          de alimentos.
+          SIAD Tech - Transporte solidário contra o desperdício de alimentos.
         </p>
-
       </footer>
 
     </div>
@@ -529,4 +364,3 @@ function Transportes({
 }
 
 export default Transportes
-
