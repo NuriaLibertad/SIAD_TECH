@@ -25,6 +25,11 @@ function Home({
                 Entrar
               </button>
 
+               <div className="navbar-nav">
+              <button className="nav-link" onClick={aoIrParaTransporte}>
+                Transporte
+              </button>
+
               <button className="nav-link" onClick={aoIrParaFaleConosco}>
                 Fale Conosco
               </button>
