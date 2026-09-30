@@ -3,8 +3,6 @@ import computador from "../../assets/images/computador.png"
 import "./style.css"
 
 function Home({
-  enviado,
-  setEnviado,
   aoIrParaLogin,
   aoIrParaFaleConosco,
   aoIrParaHome,
@@ -13,124 +11,105 @@ function Home({
 }) {
   return (
     <div className="pagina-home">
+
       <header className="cabecalho">
-        <nav className="navbar navbar-expand-lg">
-          <div className="container">
+        <nav>
+          <button
+            className="logo"
+            onClick={aoIrParaHome}
+            type="button"
+          >
+            <img
+              src={logo}
+              alt="Logo SIAD Tech"
+            />
+          </button>
 
-            <button
-              className="navbar-brand logo-area border-0 bg-transparent"
-              onClick={aoIrParaHome}
-            >
-              <img
-                src={logo}
-                alt="Logo SIAD Tech"
-                className="logo"
-              />
+          <ul className="opcoes">
+            <li>
+              <button
+                onClick={aoIrParaLogin}
+                type="button"
+              >
+                Entrar
+              </button>
+            </li>
 
-              <span>
-                SIAD <strong>Tech</strong>
-              </span>
-            </button>
+            <li>
+              <button
+                onClick={aoIrParaFaleConosco}
+                type="button"
+              >
+                Fale Conosco
+              </button>
+            </li>
 
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#menu"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
+            <li>
+              <button
+                onClick={aoIrParaDoacoes}
+                type="button"
+              >
+                Doações + ONGs
+              </button>
+            </li>
 
-            <div className="collapse navbar-collapse" id="menu">
-              <ul className="navbar-nav ms-auto">
+            <li>
+              <button
+                onClick={aoIrParaTransportes}
+                type="button"
+              >
+                Transportes
+              </button>
+            </li>
+          </ul>
 
-                <li className="nav-item">
-                  <button
-                    className="nav-link border-0 bg-transparent"
-                    onClick={aoIrParaLogin}
-                  >
-                    Entrar
-                  </button>
-                </li>
-
-                <li className="nav-item">
-                  <button
-                    className="nav-link border-0 bg-transparent"
-                    onClick={aoIrParaFaleConosco}
-                  >
-                    Fale Conosco
-                  </button>
-                </li>
-
-                <li className="nav-item">
-                  <button
-                    className="nav-link border-0 bg-transparent"
-                    onClick={aoIrParaDoacoes}
-                  >
-                    Doações + ONGs
-                  </button>
-                </li>
-
-                <li className="nav-item">
-                  <button
-                    className="nav-link border-0 bg-transparent"
-                    onClick={aoIrParaTransportes}
-                  >
-                    Transportes
-                  </button>
-                </li>
-
-              </ul>
-            </div>
-
-          </div>
+          <button
+            className="button-header"
+            onClick={aoIrParaLogin}
+            type="button"
+          >
+            Entrar
+          </button>
         </nav>
       </header>
 
       <main>
 
         <section className="hero" id="inicio">
-          <div className="container">
-            <div className="row align-items-center">
+          <div className="hero-container">
 
-              <div className="col-md-5">
+            <div className="hero-texto">
+              <h1>
+                Tecnologia que conecta alimentos a quem realmente precisa.
+              </h1>
 
-                <h1>
-                  Tecnologia que conecta alimentos a quem realmente precisa.
-                </h1>
+              <p>
+                Uma plataforma que aproxima doadores e ONGs para transformar
+                excedentes em esperança.
+              </p>
 
-                <p>
-                  Uma plataforma que aproxima doadores e ONGs para transformar
-                  excedentes em esperança.
-                </p>
-
-                <button
-                  className="botao-rosa"
-                  onClick={aoIrParaDoacoes}
-                >
-                  Faça conexão
-                </button>
-
-              </div>
-
-              <div className="col-md-7 text-center">
-
-                <img
-                  src={computador}
-                  alt="Imagem do computador"
-                  className="img-computador"
-                />
-
-              </div>
-
+              <button
+                className="botao-rosa"
+                onClick={aoIrParaDoacoes}
+                type="button"
+              >
+                Faça conexão
+              </button>
             </div>
+
+            <div className="hero-imagem">
+              <img
+                src={computador}
+                alt="Imagem do computador"
+                className="img-computador"
+              />
+            </div>
+
           </div>
         </section>
 
         <section className="texto-centro">
-
-          <div className="container">
-
+          <div className="conteudo">
             <h2>
               Transforme excedentes em esperança.
             </h2>
@@ -149,64 +128,49 @@ function Home({
                 aqui
               </a>.
             </p>
-
           </div>
-
         </section>
 
         <section className="doacoes" id="doar">
-
-          <div className="container">
+          <div className="conteudo">
 
             <h2>
               O que você pode doar?
             </h2>
 
-            <div className="row g-3">
+            <div className="cards-doacao">
 
-              <div className="col-6 col-md">
-                <div className="card-doacao">
-                  Verduras
-                </div>
+              <div className="card-doacao">
+                Verduras
               </div>
 
-              <div className="col-6 col-md">
-                <div className="card-doacao">
-                  Frutas
-                </div>
+              <div className="card-doacao">
+                Frutas
               </div>
 
-              <div className="col-6 col-md">
-                <div className="card-doacao">
-                  Água potável
-                </div>
+              <div className="card-doacao">
+                Água potável
               </div>
 
-              <div className="col-6 col-md">
-                <div className="card-doacao">
-                  Excedentes de estoque
-                </div>
+              <div className="card-doacao">
+                Excedentes de estoque
               </div>
 
-              <div className="col-6 col-md">
-                <div className="card-doacao">
-                  Sementes e cereais
-                </div>
+              <div className="card-doacao">
+                Sementes e cereais
               </div>
 
             </div>
 
           </div>
-
         </section>
 
         <section className="informacoes" id="beneficios">
+          <div className="conteudo">
 
-          <div className="container">
+            <div className="informacoes-grid">
 
-            <div className="row g-5">
-
-              <div className="col-md-6">
+              <div>
 
                 <h2>
                   Quem distribui, transforma.
@@ -232,13 +196,14 @@ function Home({
                 <button
                   className="botao-rosa"
                   onClick={aoIrParaFaleConosco}
+                  type="button"
                 >
                   Fale Conosco
                 </button>
 
               </div>
 
-              <div className="col-md-6">
+              <div>
 
                 <h2>
                   Benefícios para sua ONG:
@@ -273,18 +238,16 @@ function Home({
             </div>
 
           </div>
-
         </section>
 
         <section className="logistica">
-
-          <div className="container">
+          <div className="conteudo">
 
             <div className="caixa-logistica">
 
-              <div className="row align-items-center g-4">
+              <div className="logistica-grid">
 
-                <div className="col-md-6">
+                <div>
 
                   <h2>
                     A logística que conecta solidariedade.
@@ -292,9 +255,9 @@ function Home({
 
                   <p>
                     O módulo de transporte do SIAD Tech conecta transportadoras
-                    parceiras, motoristas solidários e operações logísticas
-                    para garantir que cada alimento seja coletado
-                    e entregue com rapidez, segurança e eficiência.
+                    parceiras, motoristas solidários e operações logísticas para
+                    garantir que cada alimento seja coletado e entregue com
+                    rapidez, segurança e eficiência.
                   </p>
 
                   <p>
@@ -302,9 +265,17 @@ function Home({
                     reduz tempo de deslocamento e otimiza cada coleta.
                   </p>
 
+                  <button
+                    className="botao-rosa"
+                    onClick={aoIrParaTransportes}
+                    type="button"
+                  >
+                    Conheça os Transportes
+                  </button>
+
                 </div>
 
-                <div className="col-md-6">
+                <div>
 
                   <ul className="lista-check">
 
@@ -337,17 +308,14 @@ function Home({
             </div>
 
           </div>
-
         </section>
 
       </main>
 
       <footer>
-
         <p>
           SIAD Tech - Tecnologia social contra o desperdício.
         </p>
-
       </footer>
 
     </div>
