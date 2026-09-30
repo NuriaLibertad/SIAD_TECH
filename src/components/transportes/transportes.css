@@ -1,29 +1,28 @@
-:root {
+.pagina-transportes {
   --fundo: #F6F8F7;
   --verde-escuro: #20633A;
   --verde: #217F35;
   --rosa: #ED106A;
   --verde-claro: #DDEFE5;
   --texto: #557062;
-}
 
-body {
+  min-height: 100vh;
   margin: 0;
   background-color: var(--fundo);
   color: var(--verde-escuro);
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.cabecalho {
+.pagina-transportes .cabecalho {
   background-color: var(--fundo);
   border-bottom: 1px solid #dce8e0;
 }
 
-.navbar {
+.pagina-transportes .navbar {
   min-height: 66px;
 }
 
-.logo-area {
+.pagina-transportes .logo-area {
   margin-left: 35px;
   display: flex;
   align-items: center;
@@ -31,52 +30,58 @@ body {
   font-weight: bold;
   color: var(--verde-escuro);
   text-decoration: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
 
-.logo-area:hover {
+.pagina-transportes .logo-area:hover {
   color: var(--verde-escuro);
 }
 
-.logo-img {
+.pagina-transportes .logo-img {
   width: 72px;
   height: auto;
 }
 
-.logo-area strong {
+.pagina-transportes .logo-area strong {
   color: var(--rosa);
 }
 
-.nav-link {
+.pagina-transportes .nav-link {
   margin-left: 18px;
   color: var(--verde-escuro);
   font-weight: bold;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
 
-.nav-link:hover,
-.nav-link.ativo {
+.pagina-transportes .nav-link:hover,
+.pagina-transportes .nav-link.ativo {
   color: var(--rosa);
 }
 
-.link-contato {
+.pagina-transportes .link-contato {
   border: 1px solid var(--verde);
   border-radius: 20px;
   padding-left: 18px !important;
   padding-right: 18px !important;
 }
 
-.hero-transportes {
+.pagina-transportes .hero-transportes {
   padding: 80px 0 55px;
   background-color: #ffffff;
 }
 
-.subtitulo {
+.pagina-transportes .subtitulo {
   color: var(--verde);
   font-size: 13px;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.hero-transportes h1 {
+.pagina-transportes .hero-transportes h1 {
   margin: 12px 0 18px;
   font-size: 54px;
   line-height: 1;
@@ -84,13 +89,13 @@ body {
   color: var(--verde-escuro);
 }
 
-.hero-transportes p {
+.pagina-transportes .hero-transportes p {
   max-width: 560px;
   color: var(--texto);
   line-height: 1.7;
 }
 
-.botao-rosa {
+.pagina-transportes .botao-rosa {
   display: inline-block;
   padding: 12px 26px;
   background-color: var(--rosa);
@@ -102,19 +107,19 @@ body {
   cursor: pointer;
 }
 
-.botao-rosa:hover {
+.pagina-transportes .botao-rosa:hover {
   color: white;
   opacity: 0.92;
 }
 
-.cartao-mapa {
+.pagina-transportes .cartao-mapa {
   padding: 28px;
   background-color: #ffffff;
   border-radius: 14px;
   box-shadow: 0 18px 42px rgba(32, 99, 58, 0.16);
 }
 
-.mapa-falso {
+.pagina-transportes .mapa-falso {
   position: relative;
   min-height: 230px;
   background-color: #eaf5ef;
@@ -122,7 +127,7 @@ body {
   overflow: hidden;
 }
 
-.linha-rota {
+.pagina-transportes .linha-rota {
   position: absolute;
   top: 115px;
   left: 55px;
@@ -133,7 +138,7 @@ body {
   transform: rotate(-20deg);
 }
 
-.ponto {
+.pagina-transportes .ponto {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -141,42 +146,42 @@ body {
   border: 5px solid #ffffff;
 }
 
-.ponto-origem {
+.pagina-transportes .ponto-origem {
   left: 50px;
   top: 140px;
   background-color: var(--rosa);
 }
 
-.ponto-meio {
+.pagina-transportes .ponto-meio {
   left: 165px;
   top: 82px;
   background-color: var(--verde);
 }
 
-.ponto-destino {
+.pagina-transportes .ponto-destino {
   right: 58px;
   top: 58px;
   background-color: var(--verde-escuro);
 }
 
-.secao {
+.pagina-transportes .secao {
   padding: 58px 0;
 }
 
-.titulo-secao {
+.pagina-transportes .titulo-secao {
   margin-bottom: 28px;
   font-weight: 800;
   color: var(--verde-escuro);
 }
 
-.fluxo {
+.pagina-transportes .fluxo {
   padding: 25px;
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 16px 38px rgba(32, 99, 58, 0.12);
 }
 
-.etapa {
+.pagina-transportes .etapa {
   min-height: 105px;
   padding: 18px;
   background-color: var(--verde-claro);
@@ -186,30 +191,30 @@ body {
   cursor: pointer;
 }
 
-.etapa.ativa {
+.pagina-transportes .etapa.ativa {
   background-color: #ffffff;
   border-color: var(--rosa);
 }
 
-.etapa span {
+.pagina-transportes .etapa span {
   display: block;
   margin-bottom: 8px;
   font-size: 28px;
 }
 
-.etapa h3 {
+.pagina-transportes .etapa h3 {
   font-size: 16px;
   font-weight: 800;
   color: var(--verde-escuro);
 }
 
-.etapa p {
+.pagina-transportes .etapa p {
   margin: 0;
   color: var(--texto);
   font-size: 14px;
 }
 
-.cartao-explicacao {
+.pagina-transportes .cartao-explicacao {
   height: 100%;
   padding: 26px;
   background-color: #ffffff;
@@ -217,45 +222,45 @@ body {
   box-shadow: 0 16px 38px rgba(32, 99, 58, 0.12);
 }
 
-.cartao-explicacao h3 {
+.pagina-transportes .cartao-explicacao h3 {
   font-weight: 800;
 }
 
-.cartao-explicacao p {
+.pagina-transportes .cartao-explicacao p {
   color: var(--texto);
   line-height: 1.7;
 }
 
-.tabela-rotas {
+.pagina-transportes .tabela-rotas {
   overflow: hidden;
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 16px 38px rgba(32, 99, 58, 0.12);
 }
 
-.table {
+.pagina-transportes .table {
   margin: 0;
 }
 
-.table th {
+.pagina-transportes .table th {
   background-color: var(--verde-escuro);
   color: white;
 }
 
-.table td {
+.pagina-transportes .table td {
   color: var(--verde-escuro);
   vertical-align: middle;
 }
 
-.linha-clicavel {
+.pagina-transportes .linha-clicavel {
   cursor: pointer;
 }
 
-.linha-clicavel:hover {
+.pagina-transportes .linha-clicavel:hover {
   background-color: #eaf7ef;
 }
 
-.status {
+.pagina-transportes .status {
   display: inline-block;
   padding: 6px 12px;
   border-radius: 20px;
@@ -263,77 +268,78 @@ body {
   font-weight: bold;
 }
 
-.status-coleta {
+.pagina-transportes .status-coleta {
   background-color: #dcefe4;
   color: var(--verde);
 }
 
-.status-urgente {
+.pagina-transportes .status-urgente {
   background-color: #ffe0ec;
   color: var(--rosa);
 }
 
-.status-entregue {
+.pagina-transportes .status-entregue {
   background-color: #eaf7ef;
   color: var(--verde-escuro);
 }
 
-.painel-interacoes {
+.pagina-transportes .painel-interacoes {
   padding: 30px;
   background: linear-gradient(135deg, var(--verde), var(--verde-escuro));
   border-radius: 12px;
   color: white;
 }
 
-.painel-interacoes h2 {
+.pagina-transportes .painel-interacoes h2 {
   font-weight: 800;
 }
 
-.painel-interacoes li {
+.pagina-transportes .painel-interacoes li {
   margin-bottom: 10px;
 }
 
-.formulario-rota {
+.pagina-transportes .formulario-rota {
   padding: 26px;
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 16px 38px rgba(32, 99, 58, 0.12);
 }
 
-footer {
+.pagina-transportes footer {
   padding: 18px;
   background-color: var(--fundo);
   text-align: center;
 }
 
-footer p {
+.pagina-transportes footer p {
   margin: 0;
   color: var(--verde-escuro);
 }
 
 @media (max-width: 768px) {
-  .logo-area {
+  .pagina-transportes .logo-area {
     margin-left: 10px;
   }
 
-  .nav-link {
+  .pagina-transportes .nav-link {
     margin-left: 0;
   }
 
-  .hero-transportes {
+  .pagina-transportes .hero-transportes {
     padding-top: 45px;
     text-align: center;
   }
 
-  .hero-transportes h1 {
+  .pagina-transportes .hero-transportes h1 {
     font-size: 38px;
   }
 
-  .cartao-mapa {
+  .pagina-transportes .cartao-mapa {
     margin-top: 30px;
   }
 
-  .etapa {
+  .pagina-transportes .etapa {
     margin-bottom: 12px;
   }
 }
+
