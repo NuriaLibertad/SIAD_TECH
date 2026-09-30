@@ -1,6 +1,6 @@
-import logo from "../../assets/./images/logosemfundo.png";
-import computador from "../../assets/./images/computador.png";
-import './style.css'
+import logo from "../../assets/images/logosemfundo.png"
+import computador from "../../assets/images/computador.png"
+import "./style.css"
 
 function Home({
   enviado,
@@ -11,153 +11,347 @@ function Home({
   aoIrParaDoacoes,
   aoIrParaTransportes
 }) {
-  
   return (
     <div className="pagina-home">
-      <header>
-        <nav>
-          <a href="#" className="logo" onClick={(e) => e.preventDefault()}>
-            <img src={logo} alt="logo da SIAD Tech" />
-          </a>
+      <header className="cabecalho">
+        <nav className="navbar navbar-expand-lg">
+          <div className="container">
 
-          <ul className="opcoes">
-            <li>
-              <a
-                href="#home"
-                onClick={(e) => {
-                  e.preventDefault();
-                  aoIrParaHome();
-                }}
-              >
-                Home
-              </a>
-            </li>
+            <button
+              className="navbar-brand logo-area border-0 bg-transparent"
+              onClick={aoIrParaHome}
+            >
+              <img
+                src={logo}
+                alt="Logo SIAD Tech"
+                className="logo"
+              />
 
-            <li>
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  aoIrParaDoacoes();
-                }}
-              >
-                Doações + ONGs
-              </a>
-            </li>
+              <span>
+                SIAD <strong>Tech</strong>
+              </span>
+            </button>
 
-            <li>
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  aoIrParaTransportes();
-                }}
-              >
-                Transporte
-              </a>
-            </li>
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#menu"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
 
-            <li>
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  aoIrParaFaleConosco();
-                }}
-              >
-                Fale Conosco
-              </a>
-            </li>
-          </ul>
+            <div className="collapse navbar-collapse" id="menu">
+              <ul className="navbar-nav ms-auto">
 
-          <a
-            href="#"
-            className="button-header"
-            onClick={(e) => {
-              e.preventDefault();
-              aoIrParaLogin();
-            }}
-          >
-            Entrar
-          </a>
+                <li className="nav-item">
+                  <button
+                    className="nav-link border-0 bg-transparent"
+                    onClick={aoIrParaLogin}
+                  >
+                    Entrar
+                  </button>
+                </li>
+
+                <li className="nav-item">
+                  <button
+                    className="nav-link border-0 bg-transparent"
+                    onClick={aoIrParaFaleConosco}
+                  >
+                    Fale Conosco
+                  </button>
+                </li>
+
+                <li className="nav-item">
+                  <button
+                    className="nav-link border-0 bg-transparent"
+                    onClick={aoIrParaDoacoes}
+                  >
+                    Doações + ONGs
+                  </button>
+                </li>
+
+                <li className="nav-item">
+                  <button
+                    className="nav-link border-0 bg-transparent"
+                    onClick={aoIrParaTransportes}
+                  >
+                    Transportes
+                  </button>
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
         </nav>
       </header>
 
       <main>
-        <section className="hero">
-          <div className="hero-texto">
-            <h1>
-              Conectando alimentos,<br />
-              pessoas e esperança.
-            </h1>
+
+        <section className="hero" id="inicio">
+          <div className="container">
+            <div className="row align-items-center">
+
+              <div className="col-md-5">
+
+                <h1>
+                  Tecnologia que conecta alimentos a quem realmente precisa.
+                </h1>
+
+                <p>
+                  Uma plataforma que aproxima doadores e ONGs para transformar
+                  excedentes em esperança.
+                </p>
+
+                <button
+                  className="botao-rosa"
+                  onClick={aoIrParaDoacoes}
+                >
+                  Faça conexão
+                </button>
+
+              </div>
+
+              <div className="col-md-7 text-center">
+
+                <img
+                  src={computador}
+                  alt="Imagem do computador"
+                  className="img-computador"
+                />
+
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <section className="texto-centro">
+
+          <div className="container">
+
+            <h2>
+              Transforme excedentes em esperança.
+            </h2>
 
             <p>
-              A SIAD Tech conecta doadores, produtores, ONGs e voluntários
-              para transformar alimentos que seriam desperdiçados em
-              oportunidades para quem precisa.
+              Alimentos que poderiam virar descarte passam a abastecer quem precisa.
             </p>
 
-            <button onClick={aoIrParaDoacoes}>
-              Quero fazer uma doação
-            </button>
+            <p>
+              Assista ao nosso vídeo institucional clicando{" "}
+              <a
+                href="https://www.youtube.com/watch?v=dPvUQBWS-7M"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                aqui
+              </a>.
+            </p>
+
           </div>
 
-          <div className="hero-imagem">
-            <img src={computador} alt="Computador representando a SIAD Tech" />
+        </section>
+
+        <section className="doacoes" id="doar">
+
+          <div className="container">
+
+            <h2>
+              O que você pode doar?
+            </h2>
+
+            <div className="row g-3">
+
+              <div className="col-6 col-md">
+                <div className="card-doacao">
+                  Verduras
+                </div>
+              </div>
+
+              <div className="col-6 col-md">
+                <div className="card-doacao">
+                  Frutas
+                </div>
+              </div>
+
+              <div className="col-6 col-md">
+                <div className="card-doacao">
+                  Água potável
+                </div>
+              </div>
+
+              <div className="col-6 col-md">
+                <div className="card-doacao">
+                  Excedentes de estoque
+                </div>
+              </div>
+
+              <div className="col-6 col-md">
+                <div className="card-doacao">
+                  Sementes e cereais
+                </div>
+              </div>
+
+            </div>
+
           </div>
+
         </section>
 
-        <section className="sobre">
-          <h2>Sobre a SIAD Tech</h2>
+        <section className="informacoes" id="beneficios">
 
-          <p>
-            A SIAD Tech é uma solução tecnológica criada para auxiliar na
-            distribuição de alimentos e combater o desperdício.
-          </p>
+          <div className="container">
 
-          <p>
-            Nossa plataforma aproxima quem possui alimentos disponíveis de
-            organizações que podem destiná-los para pessoas em situação de
-            vulnerabilidade.
-          </p>
-        </section>
+            <div className="row g-5">
 
-        <section className="objetivos">
-          <h2>Nosso objetivo</h2>
+              <div className="col-md-6">
 
-          <div className="cards">
-            <div className="card">
-              <h3>Reduzir desperdícios</h3>
-              <p>
-                Evitar que alimentos próprios para consumo sejam descartados.
-              </p>
+                <h2>
+                  Quem distribui, transforma.
+                </h2>
+
+                <p>
+                  As ONGs são o coração da rede SIAD Tech.
+                </p>
+
+                <p>
+                  Nossa plataforma conecta organizações sociais a oportunidades
+                  reais de coleta, permitindo que alimentos cheguem com rapidez
+                  às comunidades que mais precisam.
+                </p>
+
+                <p>
+                  Ao se cadastrar, sua organização passa a receber notificações
+                  inteligentes baseadas em localização, disponibilidade
+                  e prioridade de atendimento.
+                  Porque quem combate a fome precisa de tecnologia trabalhando junto.
+                </p>
+
+                <button
+                  className="botao-rosa"
+                  onClick={aoIrParaFaleConosco}
+                >
+                  Fale Conosco
+                </button>
+
+              </div>
+
+              <div className="col-md-6">
+
+                <h2>
+                  Benefícios para sua ONG:
+                </h2>
+
+                <ul className="lista-beneficios">
+
+                  <li>
+                    Alertas automáticos de novas doações.
+                  </li>
+
+                  <li>
+                    Localização do doador registrada.
+                  </li>
+
+                  <li>
+                    Gestão de retirada e transporte.
+                  </li>
+
+                  <li>
+                    Histórico completo de ações.
+                  </li>
+
+                  <li>
+                    Conexão com novos parceiros.
+                  </li>
+
+                </ul>
+
+              </div>
+
             </div>
 
-            <div className="card">
-              <h3>Conectar pessoas</h3>
-              <p>
-                Facilitar o contato entre doadores, produtores, ONGs e
-                voluntários.
-              </p>
-            </div>
-
-            <div className="card">
-              <h3>Gerar impacto</h3>
-              <p>
-                Contribuir para uma distribuição mais eficiente dos alimentos.
-              </p>
-            </div>
           </div>
+
         </section>
+
+        <section className="logistica">
+
+          <div className="container">
+
+            <div className="caixa-logistica">
+
+              <div className="row align-items-center g-4">
+
+                <div className="col-md-6">
+
+                  <h2>
+                    A logística que conecta solidariedade.
+                  </h2>
+
+                  <p>
+                    O módulo de transporte do SIAD Tech conecta transportadoras
+                    parceiras, motoristas solidários e operações logísticas
+                    para garantir que cada alimento seja coletado
+                    e entregue com rapidez, segurança e eficiência.
+                  </p>
+
+                  <p>
+                    Nossa tecnologia organiza rotas inteligentes,
+                    reduz tempo de deslocamento e otimiza cada coleta.
+                  </p>
+
+                </div>
+
+                <div className="col-md-6">
+
+                  <ul className="lista-check">
+
+                    <li>
+                      Gestão inteligente de rotas
+                    </li>
+
+                    <li>
+                      Coletas por geolocalização
+                    </li>
+
+                    <li>
+                      Redução de tempo operacional
+                    </li>
+
+                    <li>
+                      Rastreamento das entregas
+                    </li>
+
+                    <li>
+                      Logística com impacto social
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
       </main>
 
       <footer>
+
         <p>
-          © 2026 SIAD Tech - Sistema Tecnológico de Distribuição de Alimentos
+          SIAD Tech - Tecnologia social contra o desperdício.
         </p>
+
       </footer>
+
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home
