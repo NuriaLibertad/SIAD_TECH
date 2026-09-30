@@ -1,3 +1,4 @@
+
 import logo from "../../assets/images/logosemfundo.png"
 import computador from "../../assets/images/computador.png"
 import "./style.css"
@@ -13,106 +14,83 @@ function Home({
     <div className="pagina-home">
 
       <header className="cabecalho">
-        <nav>
-          <button
-            className="logo"
-            onClick={aoIrParaHome}
-            type="button"
-          >
-            <img
-              src={logo}
-              alt="Logo SIAD Tech"
-            />
-          </button>
+        <nav className="navbar navbar-expand-lg">
+          <div className="container">
 
-          <ul className="opcoes">
-            <li>
+            <button
+              className="navbar-brand logo-area border-0 bg-transparent"
+              onClick={aoIrParaHome}
+            >
+              <img
+                src={logo}
+                alt="Logo SIAD Tech"
+                className="logo"
+              />
+              <span>
+                SIAD <strong>Tech</strong>
+              </span>
+            </button>
+
+            <div className="navbar-nav ms-auto">
               <button
+                className="nav-link border-0 bg-transparent"
                 onClick={aoIrParaLogin}
-                type="button"
               >
                 Entrar
               </button>
-            </li>
 
-            <li>
               <button
+                className="nav-link border-0 bg-transparent"
                 onClick={aoIrParaFaleConosco}
-                type="button"
               >
                 Fale Conosco
               </button>
-            </li>
+            </div>
 
-            <li>
-              <button
-                onClick={aoIrParaDoacoes}
-                type="button"
-              >
-                Doações + ONGs
-              </button>
-            </li>
-
-            <li>
-              <button
-                onClick={aoIrParaTransportes}
-                type="button"
-              >
-                Transportes
-              </button>
-            </li>
-          </ul>
-
-          <button
-            className="button-header"
-            onClick={aoIrParaLogin}
-            type="button"
-          >
-            Entrar
-          </button>
+          </div>
         </nav>
       </header>
 
       <main>
 
         <section className="hero" id="inicio">
-          <div className="hero-container">
+          <div className="container">
+            <div className="row align-items-center">
 
-            <div className="hero-texto">
-              <h1>
-                Tecnologia que conecta alimentos a quem realmente precisa.
-              </h1>
+              <div className="col-md-5">
+                <h1>
+                  Tecnologia que conecta alimentos a quem realmente precisa.
+                </h1>
 
-              <p>
-                Uma plataforma que aproxima doadores e ONGs para transformar
-                excedentes em esperança.
-              </p>
+                <p>
+                  Uma plataforma que aproxima doadores e ONGs para transformar
+                  excedentes em esperança.
+                </p>
 
-              <button
-                className="botao-rosa"
-                onClick={aoIrParaDoacoes}
-                type="button"
-              >
-                Faça conexão
-              </button>
+                <button
+                  className="botao-rosa"
+                  onClick={aoIrParaDoacoes}
+                >
+                  Faça conexão
+                </button>
+              </div>
+
+              <div className="col-md-7 text-center">
+                <img
+                  src={computador}
+                  alt="Imagem do computador"
+                  className="img-computador"
+                />
+              </div>
+
             </div>
-
-            <div className="hero-imagem">
-              <img
-                src={computador}
-                alt="Imagem do computador"
-                className="img-computador"
-              />
-            </div>
-
           </div>
         </section>
 
         <section className="texto-centro">
-          <div className="conteudo">
-            <h2>
-              Transforme excedentes em esperança.
-            </h2>
+          <div className="container">
+
+            <h2>Transforme excedentes em esperança.</h2>
 
             <p>
               Alimentos que poderiam virar descarte passam a abastecer quem precisa.
@@ -123,58 +101,64 @@ function Home({
               <a
                 href="https://www.youtube.com/watch?v=dPvUQBWS-7M"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noreferrer"
               >
                 aqui
               </a>.
             </p>
+
           </div>
         </section>
 
         <section className="doacoes" id="doar">
-          <div className="conteudo">
+          <div className="container">
 
-            <h2>
-              O que você pode doar?
-            </h2>
+            <h2>O que você pode doar?</h2>
 
-            <div className="cards-doacao">
+            <div className="row g-3">
 
-              <div className="card-doacao">
-                Verduras
+              <div className="col-6 col-md">
+                <div className="card-doacao">
+                  Verduras
+                </div>
               </div>
 
-              <div className="card-doacao">
-                Frutas
+              <div className="col-6 col-md">
+                <div className="card-doacao">
+                  Frutas
+                </div>
               </div>
 
-              <div className="card-doacao">
-                Água potável
+              <div className="col-6 col-md">
+                <div className="card-doacao">
+                  Água potável
+                </div>
               </div>
 
-              <div className="card-doacao">
-                Excedentes de estoque
+              <div className="col-6 col-md">
+                <div className="card-doacao">
+                  Excedentes de estoque
+                </div>
               </div>
 
-              <div className="card-doacao">
-                Sementes e cereais
+              <div className="col-6 col-md">
+                <div className="card-doacao">
+                  Sementes e cereais
+                </div>
               </div>
 
             </div>
-
           </div>
         </section>
 
         <section className="informacoes" id="beneficios">
-          <div className="conteudo">
+          <div className="container">
 
-            <div className="informacoes-grid">
+            <div className="row g-5">
 
-              <div>
+              <div className="col-md-6">
 
-                <h2>
-                  Quem distribui, transforma.
-                </h2>
+                <h2>Quem distribui, transforma.</h2>
 
                 <p>
                   As ONGs são o coração da rede SIAD Tech.
@@ -196,62 +180,40 @@ function Home({
                 <button
                   className="botao-rosa"
                   onClick={aoIrParaFaleConosco}
-                  type="button"
                 >
                   Fale Conosco
                 </button>
 
               </div>
 
-              <div>
+              <div className="col-md-6">
 
-                <h2>
-                  Benefícios para sua ONG:
-                </h2>
+                <h2>Benefícios para sua ONG:</h2>
 
                 <ul className="lista-beneficios">
-
-                  <li>
-                    Alertas automáticos de novas doações.
-                  </li>
-
-                  <li>
-                    Localização do doador registrada.
-                  </li>
-
-                  <li>
-                    Gestão de retirada e transporte.
-                  </li>
-
-                  <li>
-                    Histórico completo de ações.
-                  </li>
-
-                  <li>
-                    Conexão com novos parceiros.
-                  </li>
-
+                  <li>Alertas automáticos de novas doações.</li>
+                  <li>Localização do doador registrada.</li>
+                  <li>Gestão de retirada e transporte.</li>
+                  <li>Histórico completo de ações.</li>
+                  <li>Conexão com novos parceiros.</li>
                 </ul>
 
               </div>
 
             </div>
-
           </div>
         </section>
 
         <section className="logistica">
-          <div className="conteudo">
+          <div className="container">
 
             <div className="caixa-logistica">
 
-              <div className="logistica-grid">
+              <div className="row align-items-center g-4">
 
-                <div>
+                <div className="col-md-6">
 
-                  <h2>
-                    A logística que conecta solidariedade.
-                  </h2>
+                  <h2>A logística que conecta solidariedade.</h2>
 
                   <p>
                     O módulo de transporte do SIAD Tech conecta transportadoras
@@ -261,44 +223,27 @@ function Home({
                   </p>
 
                   <p>
-                    Nossa tecnologia organiza rotas inteligentes,
-                    reduz tempo de deslocamento e otimiza cada coleta.
+                    Nossa tecnologia organiza rotas inteligentes, reduz tempo
+                    de deslocamento e otimiza cada coleta.
                   </p>
 
                   <button
                     className="botao-rosa"
                     onClick={aoIrParaTransportes}
-                    type="button"
                   >
-                    Conheça os Transportes
+                    Conheça os transportes
                   </button>
 
                 </div>
 
-                <div>
+                <div className="col-md-6">
 
                   <ul className="lista-check">
-
-                    <li>
-                      Gestão inteligente de rotas
-                    </li>
-
-                    <li>
-                      Coletas por geolocalização
-                    </li>
-
-                    <li>
-                      Redução de tempo operacional
-                    </li>
-
-                    <li>
-                      Rastreamento das entregas
-                    </li>
-
-                    <li>
-                      Logística com impacto social
-                    </li>
-
+                    <li>Gestão inteligente de rotas</li>
+                    <li>Coletas por geolocalização</li>
+                    <li>Redução de tempo operacional</li>
+                    <li>Rastreamento das entregas</li>
+                    <li>Logística com impacto social</li>
                   </ul>
 
                 </div>
@@ -306,7 +251,6 @@ function Home({
               </div>
 
             </div>
-
           </div>
         </section>
 
@@ -323,3 +267,4 @@ function Home({
 }
 
 export default Home
+```
