@@ -80,20 +80,20 @@ if (status === "Urgente") {
 return "status status-urgente"
 }
 
-```
+
 if (status === "Entregue") {
   return "status status-entregue"
 }
 
 return "status status-coleta"
-```
+
 
 }
 
 function cadastrarRota(evento) {
 evento.preventDefault()
 
-```
+
 if (
   !novaRota.origem ||
   !novaRota.destino ||
@@ -123,13 +123,13 @@ setNovaRota({
 })
 
 setMostrarFormulario(false)
-```
+
 
 }
 
 return ( <div className="pagina-transportes">
 
-```
+
   <header className="cabecalho">
     <nav className="navbar">
       <div className="container">
