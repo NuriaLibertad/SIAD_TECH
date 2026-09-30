@@ -6,124 +6,141 @@
   --verde-claro: #DDEFE5;
 }
 
-
-.img-computador {
-  width: 100%;
-  max-width: 520px;
-  height: auto;
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  background-color: var(--fundo);
-  color: var(--verde-escuro);
+  background-color: var;
+  color: var;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .cabecalho {
-  background-color: var(--fundo);
-  border-bottom: 1px solid #dce8e0;
+  background-color: var;
+  border-bottom: 1 px solid #dce8e0;
 }
 
 .logo-area {
-  margin-left: 35px;
+  margin-left: 15 px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 8 px;
   font-weight: bold;
-  color: var(--verde-escuro);
+  color: var !important;
+  text-decoration: none;
 }
 
 .logo {
-  width: 80px;
+  width: 65 px;
   height: auto;
 }
 
 .logo-area strong {
-  color: var(--rosa);
+  color: var;
 }
 
 .nav-link {
-  color: var(--verde-escuro);
+  color: var !important;
   font-weight: bold;
-  margin-left: 18px;
+  margin-left: 18 px;
 }
 
-.botao-menu {
-  border: 1px solid var(--verde);
-  border-radius: 20px;
-  padding-left: 18px !important;
-  padding-right: 18px !important;
+.nav-link:hover {
+  color: var !important;
 }
 
 .hero {
-  padding: 80px 0 50px;
+  padding: 55 px 0 40 px;
   background-color: white;
 }
 
 .hero h1 {
-  font-size: 42px;
-  line-height: 1.05;
+  font-size: 38px;
+  line-height: 1.1;
   font-weight: 800;
   color: var(--verde-escuro);
+  margin-bottom: 18px;
 }
 
 .hero p,
 .informacoes p,
-.logistica p,
-.app p {
+.logistica p {
   color: #557062;
   line-height: 1.6;
 }
 
 .botao-rosa {
   display: inline-block;
-  padding: 12px 26px;
-  background-color: var(--rosa);
+  padding: 11px 23px;
+  background-color: var(--rosa) !important;
   border: none;
   border-radius: 4px;
-  color: white;
+  color: white !important;
   font-weight: bold;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .botao-rosa:hover {
-  color: white;
-  opacity: 0.9;
+  background-color: #d90d60 !important;
+  color: white !important;
+}
+
+.img-computador {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: 0 auto;
 }
 
 .texto-centro {
-  padding: 45px 0;
+  padding: 38px 0;
   text-align: center;
 }
 
 .texto-centro h2,
 .doacoes h2,
 .informacoes h2,
-.logistica h2,
-.app h2 {
+.logistica h2 {
   font-weight: 800;
   color: var(--verde-escuro);
 }
 
+.texto-centro h2 {
+  font-size: 30px;
+}
+
+.texto-centro a {
+  color: var(--verde);
+  font-weight: bold;
+}
+
+.texto-centro a:hover {
+  color: var(--rosa);
+}
+
 .doacoes {
-  padding: 35px 0 55px;
+  padding: 30px 0 45px;
   text-align: center;
 }
 
 .card-doacao {
-  min-height: 120px;
-  padding: 20px;
+  min-height: 105px;
+  padding: 18px;
   background-color: var(--verde-claro);
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  color: var(--verde-escuro);
 }
 
 .informacoes {
-  padding: 60px 0;
+  padding: 50px 0;
 }
 
 .lista-beneficios {
@@ -133,11 +150,12 @@ body {
 
 .lista-beneficios li {
   margin-bottom: 10px;
-  padding: 10px 14px;
+  padding: 9px 13px;
   background-color: #eaf7ef;
   border: 1px solid var(--verde);
   border-radius: 6px;
   font-weight: bold;
+  color: var(--verde-escuro);
 }
 
 .lista-beneficios li::before,
@@ -148,11 +166,11 @@ body {
 }
 
 .logistica {
-  padding: 40px 0 70px;
+  padding: 35px 0 55px;
 }
 
 .caixa-logistica {
-  padding: 35px;
+  padding: 30px;
   border: 1px solid var(--verde);
   border-radius: 6px;
   background-color: rgba(255, 255, 255, 0.5);
@@ -165,20 +183,9 @@ body {
 }
 
 .lista-check li {
-  margin-bottom: 15px;
+  margin-bottom: 13px;
   font-weight: bold;
-}
-
-.app {
-  padding: 70px 0 0;
-  background-color: var(--verde);
-  color: white;
-  overflow: hidden;
-}
-
-.app h2,
-.app p {
-  color: white;
+  color: var(--verde-escuro);
 }
 
 footer {
@@ -193,22 +200,104 @@ footer p {
 }
 
 @media (max-width: 768px) {
+
   .logo-area {
-    margin-left: 10px;
+    margin-left: 0;
+  }
+
+  .logo {
+    width: 55px;
+  }
+
+  .navbar-nav {
+    padding: 10px 0;
+  }
+
+  .nav-link {
+    margin-left: 0;
+    text-align: center;
   }
 
   .hero {
-    padding-top: 45px;
+    padding: 40px 0 30px;
     text-align: center;
   }
 
   .hero h1 {
-    font-size: 32px;
+    font-size: 30px;
+  }
+
+  .hero p {
+    font-size: 15px;
   }
 
   .img-computador {
-    margin-top: 35px;
+    width: 90%;
+    max-width: 380px;
+    margin-top: 30px;
   }
 
-  
+  .texto-centro {
+    padding: 32px 15px;
   }
+
+  .texto-centro h2 {
+    font-size: 26px;
+  }
+
+  .doacoes {
+    padding: 25px 15px 40px;
+  }
+
+  .card-doacao {
+    min-height: 90px;
+    font-size: 14px;
+  }
+
+  .informacoes {
+    padding: 40px 15px;
+  }
+
+  .informacoes h2,
+  .logistica h2 {
+    font-size: 25px;
+  }
+
+  .logistica {
+    padding: 30px 15px 45px;
+  }
+
+  .caixa-logistica {
+    padding: 22px;
+  }
+
+  footer {
+    padding: 15px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .hero h1 {
+    font-size: 27px;
+  }
+
+  .texto-centro h2 {
+    font-size: 23px;
+  }
+
+  .card-doacao {
+    min-height: 80px;
+    padding: 12px;
+  }
+
+  .caixa-logistica {
+    padding: 18px;
+  }
+
+  .botao-rosa {
+    padding: 10px 20px;
+  }
+}
+```
