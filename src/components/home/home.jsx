@@ -4,9 +4,10 @@ import "./style.css"
 
 function Home({
   aoIrParaLogin,
+  aoIrParaDoacoes,
   aoIrParaFaleConosco,
   aoIrParaHome,
-  aoIrParaDoacoes
+  aoIrParaTransportes
 }) {
   return (
     <div className="pagina-home">
@@ -17,22 +18,29 @@ function Home({
 
             <button className="logo-area" onClick={aoIrParaHome}>
               <img src={logo} alt="Logo SIAD Tech" className="logo" />
-              <span>SIAD <strong>Tech</strong></span>
+              <span>
+                SIAD <strong>Tech</strong>
+              </span>
             </button>
 
             <div className="navbar-nav">
+
               <button className="nav-link" onClick={aoIrParaLogin}>
                 Entrar
               </button>
 
-               <div className="navbar-nav">
-              <button className="nav-link" onClick={aoIrParaTransporte}>
-                Transporte
+              <button className="nav-link" onClick={aoIrParaDoacoes}>
+                Doações + ONGs
+              </button>
+
+              <button className="nav-link" onClick={aoIrParaTransportes}>
+                Transportes
               </button>
 
               <button className="nav-link" onClick={aoIrParaFaleConosco}>
                 Fale Conosco
               </button>
+
             </div>
 
           </div>
@@ -43,9 +51,11 @@ function Home({
 
         <section className="hero">
           <div className="container">
+
             <div className="row">
 
               <div className="col-md-5">
+
                 <h1>
                   Tecnologia que conecta alimentos a quem realmente precisa.
                 </h1>
@@ -61,6 +71,7 @@ function Home({
                 >
                   Faça conexão
                 </button>
+
               </div>
 
               <div className="col-md-7 text-center">
@@ -72,13 +83,17 @@ function Home({
               </div>
 
             </div>
+
           </div>
         </section>
 
         <section className="texto-centro">
+
           <div className="container">
 
-            <h2>Transforme excedentes em esperança.</h2>
+            <h2>
+              Transforme excedentes em esperança.
+            </h2>
 
             <p>
               Alimentos que poderiam virar descarte passam a abastecer quem precisa.
@@ -96,45 +111,66 @@ function Home({
             </p>
 
           </div>
+
         </section>
 
         <section className="doacoes">
+
           <div className="container">
 
-            <h2>O que você pode doar?</h2>
+            <h2>
+              O que você pode doar?
+            </h2>
 
             <div className="row g-3">
+
               <div className="col-md-6">
-                <div className="card-doacao">Verduras</div>
+                <div className="card-doacao">
+                  Verduras
+                </div>
               </div>
 
               <div className="col-md-6">
-                <div className="card-doacao">Frutas</div>
+                <div className="card-doacao">
+                  Frutas
+                </div>
               </div>
 
               <div className="col-md-6">
-                <div className="card-doacao">Água potável</div>
+                <div className="card-doacao">
+                  Água potável
+                </div>
               </div>
 
               <div className="col-md-6">
-                <div className="card-doacao">Excedentes de estoque</div>
+                <div className="card-doacao">
+                  Excedentes de estoque
+                </div>
               </div>
 
               <div className="col-md-6">
-                <div className="card-doacao">Sementes e cereais</div>
+                <div className="card-doacao">
+                  Sementes e cereais
+                </div>
               </div>
+
             </div>
 
           </div>
+
         </section>
 
         <section className="informacoes">
+
           <div className="container">
 
             <div className="row g-5">
 
               <div className="col-md-6">
-                <h2>Quem distribui, transforma.</h2>
+
+                <h2>
+                  Quem distribui, transforma.
+                </h2>
 
                 <p>
                   As ONGs são o coração da rede SIAD Tech.
@@ -159,26 +195,49 @@ function Home({
                 >
                   Fale Conosco
                 </button>
+
               </div>
 
               <div className="col-md-6">
-                <h2>Benefícios para sua ONG:</h2>
+
+                <h2>
+                  Benefícios para sua ONG:
+                </h2>
 
                 <ul className="lista-beneficios">
-                  <li>Alertas automáticos de novas doações.</li>
-                  <li>Localização do doador registrada.</li>
-                  <li>Gestão de retirada e transporte.</li>
-                  <li>Histórico completo de ações.</li>
-                  <li>Conexão com novos parceiros.</li>
+
+                  <li>
+                    Alertas automáticos de novas doações.
+                  </li>
+
+                  <li>
+                    Localização do doador registrada.
+                  </li>
+
+                  <li>
+                    Gestão de retirada e transporte.
+                  </li>
+
+                  <li>
+                    Histórico completo de ações.
+                  </li>
+
+                  <li>
+                    Conexão com novos parceiros.
+                  </li>
+
                 </ul>
+
               </div>
 
             </div>
 
           </div>
+
         </section>
 
         <section className="logistica">
+
           <div className="container">
 
             <div className="caixa-logistica">
@@ -186,7 +245,10 @@ function Home({
               <div className="row g-4">
 
                 <div className="col-md-6">
-                  <h2>A logística que conecta solidariedade.</h2>
+
+                  <h2>
+                    A logística que conecta solidariedade.
+                  </h2>
 
                   <p>
                     O módulo de transporte do SIAD Tech conecta transportadoras
@@ -199,16 +261,35 @@ function Home({
                     Nossa tecnologia organiza rotas inteligentes, reduz tempo de
                     deslocamento e otimiza cada coleta.
                   </p>
+
                 </div>
 
                 <div className="col-md-6">
+
                   <ul className="lista-check">
-                    <li>Gestão inteligente de rotas</li>
-                    <li>Coletas por geolocalização</li>
-                    <li>Redução de tempo operacional</li>
-                    <li>Rastreamento das entregas</li>
-                    <li>Logística com impacto social</li>
+
+                    <li>
+                      Gestão inteligente de rotas
+                    </li>
+
+                    <li>
+                      Coletas por geolocalização
+                    </li>
+
+                    <li>
+                      Redução de tempo operacional
+                    </li>
+
+                    <li>
+                      Rastreamento das entregas
+                    </li>
+
+                    <li>
+                      Logística com impacto social
+                    </li>
+
                   </ul>
+
                 </div>
 
               </div>
@@ -216,12 +297,15 @@ function Home({
             </div>
 
           </div>
+
         </section>
 
       </main>
 
       <footer>
-        <p>SIAD Tech - Tecnologia social contra o desperdício.</p>
+        <p>
+          SIAD Tech - Tecnologia social contra o desperdício.
+        </p>
       </footer>
 
     </div>
@@ -229,3 +313,4 @@ function Home({
 }
 
 export default Home
+
