@@ -2,7 +2,7 @@ import { useState } from 'react'
 import logo from '../../assets/./images/logosemfundo.png'
 import './doacoes.css'
 
-function Doacoes({ aoVoltar, aoIrParaLogin, aoIrParaFaleConosco }) {
+function Doacoes({ aoVoltar, aoIrParaLogin, aoIrParaFaleConosco , aoIrParaTransportes}) {
   const [mostrarOngs, setMostrarOngs] = useState(false)
 
   const alternarSlide = () => {
