@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import logo from '../../assets/./images/logosemfundo.png'
+import logo from '../../assets/images/logosemfundo.png'
 import './doacoes.css'
 
-function Doacoes({ aoVoltar, aoIrParaLogin, aoIrParaFaleConosco , aoIrParaTransportes}) {
+function Doacoes({ aoVoltar, aoIrParaLogin, aoIrParaFaleConosco, aoIrParaTransportes }) {
   const [mostrarOngs, setMostrarOngs] = useState(false)
 
   const alternarSlide = () => {
@@ -10,7 +10,7 @@ function Doacoes({ aoVoltar, aoIrParaLogin, aoIrParaFaleConosco , aoIrParaTransp
   }
 
   return (
-  <div className="pagina-doacoes">
+    <div className="pagina-doacoes">
       <header>
         <nav>
           <a
@@ -33,22 +33,25 @@ function Doacoes({ aoVoltar, aoIrParaLogin, aoIrParaFaleConosco , aoIrParaTransp
                   aoVoltar()
                 }}
               >
-                <li>
-  <a
-    href="#"
-    onClick={(e) => {
-      e.preventDefault()
-      aoIrParaTransportes()
-    }}
-  >
-    Transporte
-  </a>
-</li>
                 Home
               </a>
             </li>
-            <li><a href="#" className="ativo">Doações + ONGs</a></li>
-            <li><a href="#">Transporte</a></li>
+            <li>
+              <a href="#" className="ativo" onClick={(e) => e.preventDefault()}>
+                Doações + ONGs
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault()
+                  aoIrParaTransportes()
+                }}
+              >
+                Transporte
+              </a>
+            </li>
             <li>
               <a
                 href="#"
@@ -112,7 +115,7 @@ function Doacoes({ aoVoltar, aoIrParaLogin, aoIrParaFaleConosco , aoIrParaTransp
                       </tr>
                       <tr>
                         <td>2</td>
-                        <td>Produtor Silva & Filhos</td>
+                        <td>Produtor Silva &amp; Filhos</td>
                         <td>Tomates (150kg)</td>
                         <td>Instituto Pão da Vida</td>
                         <td><span className="status transporte">Em transporte</span></td>
