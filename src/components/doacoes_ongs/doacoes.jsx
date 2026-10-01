@@ -8,11 +8,7 @@ function Doacoes({ aoVoltar, aoIrParaLogin, aoIrParaFaleConosco }) {
   const alternarSlide = () => {
     setMostrarOngs((atual) => !atual)
   }
-.pagina-doacoes {
-  width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
+
   return (
   <div className="pagina-doacoes">
       <header>
