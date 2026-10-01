@@ -1,8 +1,7 @@
 import { useState } from "react";
-import logo from "../../assets/./images/logosemfundo.png";
+import logo from "../../assets/images/logosemfundo.png";
 import "./faleconosco.css";
 
-// ── Funções de validação (mesma lógica do faleconosco.js original) ──
 function validarNome(valor) {
   const quantidade = valor.length;
   if (quantidade < 10) return "Digite seu nome e sobrenome";
@@ -48,7 +47,7 @@ function validarMensagem(valor) {
   return "";
 }
 
-function FaleConosco({ aoVoltar, aoIrParaLogin, aoIrParaDoacoes }) {
+function FaleConosco({ aoVoltar, aoIrParaLogin, aoIrParaDoacoes, aoIrParaTransportes }) {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [telefone, setTelefone] = useState("");
@@ -94,22 +93,21 @@ function FaleConosco({ aoVoltar, aoIrParaLogin, aoIrParaDoacoes }) {
     setErroTelefone(msgTelefone);
     setErroMensagem(msgMensagem);
 
-    const erros = [msgNome, msgEmail, msgTelefone, msgMensagem].filter(
-      (msg) => msg !== ""
-    );
+    const camposComErro = [
+      msgNome && "Nome",
+      msgEmail && "Email",
+      msgTelefone && "Telefone",
+      msgMensagem && "Mensagem",
+    ].filter(Boolean);
 
-    if (erros.length === 0) {
+    if (camposComErro.length === 0) {
       alert("Mensagem enviada com sucesso!");
-    } else if (erros.length > 1) {
+    } else if (camposComErro.length > 1) {
       alert("Existem campos preenchidos incorretamente.");
     } else {
-      if (msgNome) alert("Verifique o campo Nome.");
-      if (msgEmail) alert("Verifique o campo Email.");
-      if (msgTelefone) alert("Verifique o campo Telefone.");
-      if (msgMensagem) alert("Verifique o campo Mensagem.");
+      alert(`Verifique o campo ${camposComErro[0]}.`);
     }
   }
-
 
   return (
     <div className="pagina-faleconosco">
@@ -129,7 +127,7 @@ function FaleConosco({ aoVoltar, aoIrParaLogin, aoIrParaDoacoes }) {
           <ul className="opcoes">
             <li>
               <a
-                href="#home"
+                href="#"
                 onClick={(e) => {
                   e.preventDefault();
                   aoVoltar();
@@ -149,8 +147,22 @@ function FaleConosco({ aoVoltar, aoIrParaLogin, aoIrParaDoacoes }) {
                 Doações + ONGs
               </a>
             </li>
-            <li><a href="#">Transporte</a></li>
-            <li><a href="#"><span>Fale Conosco</span></a></li>
+            <li>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  aoIrParaTransportes();
+                }}
+              >
+                Transporte
+              </a>
+            </li>
+            <li>
+              <a href="#" onClick={(e) => e.preventDefault()}>
+                <span>Fale Conosco</span>
+              </a>
+            </li>
           </ul>
 
           <a
@@ -173,7 +185,7 @@ function FaleConosco({ aoVoltar, aoIrParaLogin, aoIrParaDoacoes }) {
           </div>
 
           <div className="card">
-            <p>
+            <p className="card-texto">
               Preencha seus dados e nossa equipe entrará em contato para
               responder quaisquer dúvidas sobre a SIAD Tech
             </p>
@@ -186,7 +198,7 @@ function FaleConosco({ aoVoltar, aoIrParaLogin, aoIrParaDoacoes }) {
                 value={nome}
                 onChange={handleNomeChange}
               />
-              <p id="erroNome">{erroNome}</p>
+              {erroNome && <p className="erro">{erroNome}</p>}
 
               <input
                 type="email"
@@ -195,28 +207,34 @@ function FaleConosco({ aoVoltar, aoIrParaLogin, aoIrParaDoacoes }) {
                 value={email}
                 onChange={handleEmailChange}
               />
-              <p id="erroEmail">{erroEmail}</p>
+              {erroEmail && <p className="erro">{erroEmail}</p>}
 
               <input
                 type="tel"
                 id="telefone"
                 placeholder="Whatsapp com DDD"
+                inputMode="numeric"
                 value={telefone}
                 onChange={handleTelefoneChange}
               />
-              <p id="erroTelefone">{erroTelefone}</p>
+              {erroTelefone && <p className="erro">{erroTelefone}</p>}
 
               <textarea
                 id="mensagem"
                 placeholder="Digite sua mensagem"
-                maxLength="500"
+                maxLength={500}
                 value={mensagem}
                 onChange={handleMensagemChange}
               ></textarea>
-              <p id="erroMensagem">{erroMensagem}</p>
+              {erroMensagem && <p className="erro">{erroMensagem}</p>}
             </div>
 
-            <button type="button" id="btnContato" className="btn-contato" onClick={handleEnviar}>
+            <button
+              type="button"
+              id="btnContato"
+              className="btn-contato"
+              onClick={handleEnviar}
+            >
               Entrar em Contato
               <i className="fa-solid fa-square-arrow-up-right"></i>
             </button>
