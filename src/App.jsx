@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Home from './components/home/home'
 import Login from './components/login/login'
 import EsqueciSenha from './components/esqueci_senha/esqueci'
@@ -9,60 +9,75 @@ import Transportes from './components/transportes/transportes'
 function App() {
   const [pagina, setPagina] = useState('home')
 
-  let conteudo
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pagina])
 
-  if (pagina === 'home') {
-    conteudo = (
-      <Home
-        aoIrParaHome={() => setPagina('home')}
-        aoIrParaLogin={() => setPagina('login')}
-        aoIrParaFaleConosco={() => setPagina('faleconosco')}
-        aoIrParaDoacoes={() => setPagina('doacoes')}
-        aoIrParaTransportes={() => setPagina('transportes')}
-      />
-    )
-  } else if (pagina === 'login') {
-    conteudo = (
+  const ir = {
+    home: () => setPagina('home'),
+    login: () => setPagina('login'),
+    esqueci: () => setPagina('esqueci'),
+    doacoes: () => setPagina('doacoes'),
+    faleconosco: () => setPagina('faleconosco'),
+    transportes: () => setPagina('transportes'),
+  }
+
+  if (pagina === 'login') {
+    return (
       <Login
-        aoVoltar={() => setPagina('home')}
-        aoEsqueciSenha={() => setPagina('esqueci')}
-        aoLogarComSucesso={() => setPagina('home')}
-      />
-    )
-  } else if (pagina === 'esqueci') {
-    conteudo = (
-      <EsqueciSenha
-        aoVoltar={() => setPagina('login')}
-      />
-    )
-  } else if (pagina === 'doacoes') {
-    conteudo = (
-      <DoacoesOngs
-        aoVoltar={() => setPagina('home')}
-        aoIrParaLogin={() => setPagina('login')}
-        aoIrParaFaleConosco={() => setPagina('faleconosco')}
-      />
-    )
-  } else if (pagina === 'faleconosco') {
-    conteudo = (
-      <FaleConosco
-        aoVoltar={() => setPagina('home')}
-        aoIrParaLogin={() => setPagina('login')}
-        aoIrParaDoacoes={() => setPagina('doacoes')}
-      />
-    )
-  } else if (pagina === 'transportes') {
-    conteudo = (
-      <Transportes
-        aoVoltar={() => setPagina('home')}
-        aoIrParaLogin={() => setPagina('login')}
-        aoIrParaDoacoes={() => setPagina('doacoes')}
-        aoIrParaFaleConosco={() => setPagina('faleconosco')}
+        aoVoltar={ir.home}
+        aoEsqueciSenha={ir.esqueci}
+        aoLogarComSucesso={ir.home}
       />
     )
   }
 
-  return conteudo
+  if (pagina === 'esqueci') {
+    return <EsqueciSenha aoVoltar={ir.login} />
+  }
+
+  if (pagina === 'doacoes') {
+    return (
+      <DoacoesOngs
+        aoVoltar={ir.home}
+        aoIrParaLogin={ir.login}
+        aoIrParaFaleConosco={ir.faleconosco}
+        aoIrParaTransportes={ir.transportes}
+      />
+    )
+  }
+
+  if (pagina === 'faleconosco') {
+    return (
+      <FaleConosco
+        aoVoltar={ir.home}
+        aoIrParaLogin={ir.login}
+        aoIrParaDoacoes={ir.doacoes}
+        aoIrParaTransportes={ir.transportes}
+      />
+    )
+  }
+
+  if (pagina === 'transportes') {
+    return (
+      <Transportes
+        aoVoltar={ir.home}
+        aoIrParaLogin={ir.login}
+        aoIrParaDoacoes={ir.doacoes}
+        aoIrParaFaleConosco={ir.faleconosco}
+      />
+    )
+  }
+
+  return (
+    <Home
+      aoIrParaHome={ir.home}
+      aoIrParaLogin={ir.login}
+      aoIrParaFaleConosco={ir.faleconosco}
+      aoIrParaDoacoes={ir.doacoes}
+      aoIrParaTransportes={ir.transportes}
+    />
+  )
 }
 
 export default App
