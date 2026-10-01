@@ -33,6 +33,17 @@ function Doacoes({ aoVoltar, aoIrParaLogin, aoIrParaFaleConosco , aoIrParaTransp
                   aoVoltar()
                 }}
               >
+                <li>
+  <a
+    href="#"
+    onClick={(e) => {
+      e.preventDefault()
+      aoIrParaTransportes()
+    }}
+  >
+    Transporte
+  </a>
+</li>
                 Home
               </a>
             </li>
