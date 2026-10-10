@@ -106,7 +106,7 @@ function Home({
             <p>
               Assista ao nosso vídeo institucional clicando{" "}
               <a
-                href="https://www.youtube.com/watch?v=dPvUQBWS-7M"
+                href="https://youtu.be/YGSMNDJ1GIw?si=hfpIphpkEcjNf3JX"
                 target="_blank"
                 rel="noreferrer"
               >
